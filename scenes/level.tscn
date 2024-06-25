@@ -1,3 +1,21 @@
-[gd_scene format=3 uid="uid://bw0tb6yjh4l5y"]
+[gd_scene load_steps=3 format=3 uid="uid://bw0tb6yjh4l5y"]
+
+[ext_resource type="Texture2D" uid="uid://dpp38s6id471s" path="res://assets/Untitled_Artwork.png" id="1_23w8p"]
+[ext_resource type="PackedScene" uid="uid://cfot0fffu6j2t" path="res://scenes/zombie.tscn" id="2_bm2e6"]
 
 [node name="Level" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(2089, 880)
+texture = ExtResource("1_23w8p")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(1808, 876)
+
+[node name="Zombie" parent="." instance=ExtResource("2_bm2e6")]
+position = Vector2(2067, 606)
+scale = Vector2(0.55, 0.55)
+
+[node name="Seed_Placeholder" type="Polygon2D" parent="."]
+position = Vector2(-88, 50)
+polygon = PackedVector2Array(994, 477, 993, 477, 993, 568, 1133, 568, 1133, 477)
