@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://cfot0fffu6j2t"]
 
-[ext_resource type="Script" path="res://scenes/zombie.gd" id="1_ctqwp"]
-[ext_resource type="Texture2D" uid="uid://dg2dkp5d0oxlw" path="res://assets/zombies/Final_Base_Zombie_Template.png" id="1_eusk6"]
+[ext_resource type="Script" path="res://scenes/zombies/zombie.gd" id="1_ukp02"]
+[ext_resource type="Texture2D" uid="uid://dg2dkp5d0oxlw" path="res://assets/zombies/Final_Base_Zombie_Template.png" id="2_pkkdr"]
 
 [sub_resource type="Animation" id="Animation_qjo5p"]
 resource_name = "Idle"
@@ -1368,14 +1368,14 @@ _data = {
 }
 
 [node name="Zombie" type="Node2D"]
-script = ExtResource("1_ctqwp")
+script = ExtResource("1_ukp02")
 
 [node name="Polygons" type="Node2D" parent="."]
 
 [node name="Hip" type="Polygon2D" parent="Polygons"]
 position = Vector2(655, 265)
 offset = Vector2(-712, -555)
-texture = ExtResource("1_eusk6")
+texture = ExtResource("2_pkkdr")
 polygon = PackedVector2Array(661.224, 534.694, 661.905, 584.354, 768.027, 578.911, 755.102, 523.129)
 uv = PackedVector2Array(661.224, 534.694, 661.905, 584.354, 768.027, 578.911, 755.102, 523.129)
 bones = ["Hip", PackedFloat32Array(0, 0, 0, 0), "Hip/Torso", PackedFloat32Array(0, 0, 0, 0), "Hip/Torso/Left_Shoulder", PackedFloat32Array(0, 0, 0, 0), "Hip/Torso/Left_Shoulder/Left_Elbow", PackedFloat32Array(0, 0, 0, 0), "Hip/Torso/Left_Shoulder/Left_Elbow/Left_Hand", PackedFloat32Array(0, 0, 0, 0), "Hip/Torso/Right_Shoulder", PackedFloat32Array(0, 0, 0, 0), "Hip/Torso/Right_Shoulder/Right_Elbow", PackedFloat32Array(0, 0, 0, 0), "Hip/Torso/Right_Shoulder/Right_Elbow/Right_Hand", PackedFloat32Array(0, 0, 0, 0), "Hip/Torso/Right_Shoulder/Right_Elbow/Right_Hand/Flag", PackedFloat32Array(0, 0, 0, 0), "Hip/Torso/Head", PackedFloat32Array(0, 0, 0, 0), "Hip/Torso/Head/Jaw", PackedFloat32Array(0, 0, 0, 0), "Hip/Torso/Head/Headwear", PackedFloat32Array(0, 0, 0, 0), "Hip/Right_Leg", PackedFloat32Array(0, 0, 0, 0), "Hip/Right_Leg/Right_Knee", PackedFloat32Array(0, 0, 0, 0), "Hip/Right_Leg/Right_Knee/Right_Ankle", PackedFloat32Array(0, 0, 0, 0), "Hip/Right_Leg/Right_Knee/Right_Ankle/Right_Foot", PackedFloat32Array(0, 0, 0, 0), "Hip/Left_Leg", PackedFloat32Array(0, 0, 0, 0), "Hip/Left_Leg/Left_Knee", PackedFloat32Array(0, 0, 0, 0), "Hip/Left_Leg/Left_Knee/Left_Ankle", PackedFloat32Array(0, 0, 0, 0), "Hip/Left_Leg/Left_Knee/Left_Ankle/Left_Foot", PackedFloat32Array(0, 0, 0, 0)]
@@ -1383,7 +1383,7 @@ bones = ["Hip", PackedFloat32Array(0, 0, 0, 0), "Hip/Torso", PackedFloat32Array(
 [node name="Right_Thigh" type="Polygon2D" parent="Polygons/Hip"]
 position = Vector2(-25, 15)
 offset = Vector2(-680, -600)
-texture = ExtResource("1_eusk6")
+texture = ExtResource("2_pkkdr")
 polygon = PackedVector2Array(657.143, 586.395, 657.143, 665.306, 714.966, 674.83, 715.646, 587.075)
 uv = PackedVector2Array(657.143, 586.395, 657.143, 665.306, 714.966, 674.83, 715.646, 587.075)
 
@@ -1391,28 +1391,28 @@ uv = PackedVector2Array(657.143, 586.395, 657.143, 665.306, 714.966, 674.83, 715
 show_behind_parent = true
 position = Vector2(4, 59)
 offset = Vector2(-676, -682)
-texture = ExtResource("1_eusk6")
+texture = ExtResource("2_pkkdr")
 polygon = PackedVector2Array(638.095, 654.422, 623.81, 731.973, 681.633, 741.497, 706.122, 678.912)
 uv = PackedVector2Array(638.095, 654.422, 623.81, 731.973, 681.633, 741.497, 706.122, 678.912)
 
 [node name="Right_Heel" type="Polygon2D" parent="Polygons/Hip/Right_Thigh/Right_Shin"]
 position = Vector2(-42, 52)
 offset = Vector2(-612, -750)
-texture = ExtResource("1_eusk6")
+texture = ExtResource("2_pkkdr")
 polygon = PackedVector2Array(598.507, 735.075, 598.507, 774.627, 643.537, 774.83, 644.03, 735.075)
 uv = PackedVector2Array(598.507, 735.075, 598.507, 774.627, 643.537, 774.83, 644.03, 735.075)
 
 [node name="Right_Foot" type="Polygon2D" parent="Polygons/Hip/Right_Thigh/Right_Shin/Right_Heel"]
 position = Vector2(9, 9)
 offset = Vector2(-666, -760)
-texture = ExtResource("1_eusk6")
+texture = ExtResource("2_pkkdr")
 polygon = PackedVector2Array(655.97, 738.806, 655.97, 778.358, 713.433, 777.612, 713.433, 738.06)
 uv = PackedVector2Array(655.97, 738.806, 655.97, 778.358, 713.433, 777.612, 713.433, 738.06)
 
 [node name="Left_Thigh" type="Polygon2D" parent="Polygons/Hip"]
 position = Vector2(27, 3)
 offset = Vector2(-760, -586)
-texture = ExtResource("1_eusk6")
+texture = ExtResource("2_pkkdr")
 polygon = PackedVector2Array(733.333, 579.592, 734.014, 665.306, 791.837, 664.626, 791.837, 580.272)
 uv = PackedVector2Array(733.333, 579.592, 734.014, 665.306, 791.837, 664.626, 791.837, 580.272)
 
@@ -1420,28 +1420,28 @@ uv = PackedVector2Array(733.333, 579.592, 734.014, 665.306, 791.837, 664.626, 79
 show_behind_parent = true
 position = Vector2(11, 63)
 offset = Vector2(-800, -648)
-texture = ExtResource("1_eusk6")
+texture = ExtResource("2_pkkdr")
 polygon = PackedVector2Array(782.993, 634.014, 783.673, 695.238, 821.088, 695.918, 820.408, 634.014)
 uv = PackedVector2Array(782.993, 634.014, 783.673, 695.238, 821.088, 695.918, 820.408, 634.014)
 
 [node name="Left_Heel" type="Polygon2D" parent="Polygons/Hip/Left_Thigh/Left_Shin"]
 position = Vector2(13, 49)
 offset = Vector2(-880, -708)
-texture = ExtResource("1_eusk6")
+texture = ExtResource("2_pkkdr")
 polygon = PackedVector2Array(820.408, 661.905, 820.408, 748.98, 900, 748.979, 900, 661.905)
 uv = PackedVector2Array(820.408, 661.905, 820.408, 748.98, 900, 748.979, 900, 661.905)
 
 [node name="Left_Foot" type="Polygon2D" parent="Polygons/Hip/Left_Thigh/Left_Shin/Left_Heel"]
 position = Vector2(-17, 12)
 offset = Vector2(-788, -734)
-texture = ExtResource("1_eusk6")
+texture = ExtResource("2_pkkdr")
 polygon = PackedVector2Array(725.85, 722.449, 726.531, 769.388, 806.122, 769.388, 806.122, 722.449)
 uv = PackedVector2Array(725.85, 722.449, 726.531, 769.388, 806.122, 769.388, 806.122, 722.449)
 
 [node name="Torso" type="Polygon2D" parent="Polygons/Hip"]
 position = Vector2(20, -20)
 offset = Vector2(-730, -484)
-texture = ExtResource("1_eusk6")
+texture = ExtResource("2_pkkdr")
 polygon = PackedVector2Array(636.054, 366.667, 657.143, 529.932, 774.15, 524.49, 740.136, 365.986)
 uv = PackedVector2Array(636.054, 366.667, 657.143, 529.932, 774.15, 524.49, 740.136, 365.986)
 bones = ["Hip", PackedFloat32Array(0, 0, 0, 0), "Hip/Torso", PackedFloat32Array(0, 0, 0, 0), "Hip/Torso/Left_Shoulder", PackedFloat32Array(0, 0, 0, 0), "Hip/Torso/Left_Shoulder/Left_Elbow", PackedFloat32Array(0, 0, 0, 0), "Hip/Torso/Left_Shoulder/Left_Elbow/Left_Hand", PackedFloat32Array(0, 0, 0, 0), "Hip/Torso/Right_Shoulder", PackedFloat32Array(0, 0, 0, 0), "Hip/Torso/Right_Shoulder/Right_Elbow", PackedFloat32Array(0, 0, 0, 0), "Hip/Torso/Right_Shoulder/Right_Elbow/Right_Hand", PackedFloat32Array(0, 0, 0, 0), "Hip/Torso/Right_Shoulder/Right_Elbow/Right_Hand/Flag", PackedFloat32Array(0, 0, 0, 0), "Hip/Torso/Head", PackedFloat32Array(0, 0, 0, 0), "Hip/Torso/Head/Jaw", PackedFloat32Array(0, 0, 0, 0), "Hip/Torso/Head/Headwear", PackedFloat32Array(0, 0, 0, 0), "Hip/Right_Leg", PackedFloat32Array(0, 0, 0, 0), "Hip/Right_Leg/Right_Knee", PackedFloat32Array(0, 0, 0, 0), "Hip/Right_Leg/Right_Knee/Right_Ankle", PackedFloat32Array(0, 0, 0, 0), "Hip/Right_Leg/Right_Knee/Right_Ankle/Right_Foot", PackedFloat32Array(0, 0, 0, 0), "Hip/Left_Leg", PackedFloat32Array(0, 0, 0, 0), "Hip/Left_Leg/Left_Knee", PackedFloat32Array(0, 0, 0, 0), "Hip/Left_Leg/Left_Knee/Left_Ankle", PackedFloat32Array(0, 0, 0, 0), "Hip/Left_Leg/Left_Knee/Left_Ankle/Left_Foot", PackedFloat32Array(0, 0, 0, 0)]
@@ -1449,7 +1449,7 @@ bones = ["Hip", PackedFloat32Array(0, 0, 0, 0), "Hip/Torso", PackedFloat32Array(
 [node name="Head" type="Polygon2D" parent="Polygons/Hip/Torso"]
 position = Vector2(-53, -108)
 offset = Vector2(-846, -376)
-texture = ExtResource("1_eusk6")
+texture = ExtResource("2_pkkdr")
 polygon = PackedVector2Array(732.432, 251.108, 733.333, 397.054, 899.099, 396.153, 900, 251.108)
 uv = PackedVector2Array(737.838, 250.45, 735.135, 394.595, 900.901, 393.694, 901.802, 248.649)
 
@@ -1457,7 +1457,7 @@ uv = PackedVector2Array(737.838, 250.45, 735.135, 394.595, 900.901, 393.694, 901
 show_behind_parent = true
 position = Vector2(-5, -11)
 offset = Vector2(-560, -588)
-texture = ExtResource("1_eusk6")
+texture = ExtResource("2_pkkdr")
 polygon = PackedVector2Array(482.313, 570.748, 484.354, 650.34, 577.33, 650.574, 577.551, 571.429)
 uv = PackedVector2Array(482.313, 570.748, 484.354, 650.34, 577.33, 650.574, 577.551, 571.429)
 
@@ -1468,14 +1468,14 @@ rotation = 0.133476
 [node name="Cone" type="Polygon2D" parent="Polygons/Hip/Torso/Head/Headwear"]
 visible = false
 offset = Vector2(-360, -200)
-texture = ExtResource("1_eusk6")
+texture = ExtResource("2_pkkdr")
 polygon = PackedVector2Array(281.343, 77.6119, 270.647, 235.113, 436.413, 234.212, 420.149, 77.6119)
 uv = PackedVector2Array(281.343, 77.6119, 270.647, 235.113, 436.413, 234.212, 420.149, 77.6119)
 
 [node name="Cone_Damaged" type="Polygon2D" parent="Polygons/Hip/Torso/Head/Headwear"]
 visible = false
 offset = Vector2(-360, -366)
-texture = ExtResource("1_eusk6")
+texture = ExtResource("2_pkkdr")
 polygon = PackedVector2Array(284.328, 246.269, 273.632, 403.77, 439.398, 402.869, 423.134, 246.269)
 uv = PackedVector2Array(284.328, 246.269, 273.632, 403.77, 439.398, 402.869, 423.134, 246.269)
 
@@ -1483,7 +1483,7 @@ uv = PackedVector2Array(284.328, 246.269, 273.632, 403.77, 439.398, 402.869, 423
 visible = false
 position = Vector2(-0.83313, -1.10997)
 offset = Vector2(-342, -540)
-texture = ExtResource("1_eusk6")
+texture = ExtResource("2_pkkdr")
 polygon = PackedVector2Array(287.313, 417.164, 250.498, 574.666, 416.263, 573.765, 400, 417.164)
 uv = PackedVector2Array(287.313, 417.164, 250.498, 574.666, 416.263, 573.765, 400, 417.164)
 
@@ -1492,7 +1492,7 @@ visible = false
 position = Vector2(-1.82416, -0.976891)
 rotation = -0.133476
 offset = Vector2(-540, -156)
-texture = ExtResource("1_eusk6")
+texture = ExtResource("2_pkkdr")
 polygon = PackedVector2Array(427.612, 76.8657, 434.08, 237.352, 599.845, 236.451, 623.134, 76.8657)
 uv = PackedVector2Array(427.612, 76.8657, 434.08, 237.352, 599.845, 236.451, 623.134, 76.8657)
 
@@ -1501,7 +1501,7 @@ visible = false
 position = Vector2(-0.566895, 0.872242)
 rotation = -0.133476
 offset = Vector2(-556, -330)
-texture = ExtResource("1_eusk6")
+texture = ExtResource("2_pkkdr")
 polygon = PackedVector2Array(438.806, 256.716, 445.274, 417.203, 611.039, 416.302, 634.328, 256.716)
 uv = PackedVector2Array(438.806, 256.716, 445.274, 417.203, 611.039, 416.302, 634.328, 256.716)
 
@@ -1510,7 +1510,7 @@ visible = false
 position = Vector2(-3.80634, -0.710732)
 rotation = -0.133476
 offset = Vector2(-510, -492)
-texture = ExtResource("1_eusk6")
+texture = ExtResource("2_pkkdr")
 polygon = PackedVector2Array(411.94, 414.925, 412.687, 546.269, 581.343, 545.522, 580.597, 415.672)
 uv = PackedVector2Array(411.94, 414.925, 412.687, 546.269, 581.343, 545.522, 580.597, 415.672)
 
@@ -1519,7 +1519,7 @@ visible = false
 position = Vector2(4.1225, -1.77538)
 rotation = -0.133476
 offset = Vector2(-746, -146)
-texture = ExtResource("1_eusk6")
+texture = ExtResource("2_pkkdr")
 polygon = PackedVector2Array(621.642, 186.567, 741.791, 194.776, 782.836, 241.791, 782.836, 241.791, 852.985, 186.567, 764.925, 49.2537, 632.09, 50)
 uv = PackedVector2Array(621.642, 186.567, 741.791, 194.776, 782.836, 241.791, 782.836, 241.791, 852.985, 186.567, 764.925, 49.2537, 632.09, 50)
 
@@ -1529,7 +1529,7 @@ z_index = -1
 position = Vector2(-50.686, 40.8981)
 rotation = -0.133476
 offset = Vector2(-680, -200)
-texture = ExtResource("1_eusk6")
+texture = ExtResource("2_pkkdr")
 polygon = PackedVector2Array(637.313, 186.567, 705.97, 193.284, 697.015, 259.701, 626.119, 259.701)
 uv = PackedVector2Array(637.313, 186.567, 705.97, 193.284, 697.015, 259.701, 626.119, 259.701)
 
@@ -1538,7 +1538,7 @@ visible = false
 position = Vector2(1.01611, -2.36723)
 rotation = -0.133476
 offset = Vector2(-160, -122)
-texture = ExtResource("1_eusk6")
+texture = ExtResource("2_pkkdr")
 polygon = PackedVector2Array(38.4957, 161.286, 158.645, 169.495, 199.69, 216.51, 199.69, 216.51, 269.839, 161.286, 183.708, 37.6404, 48.8764, 38.2022)
 uv = PackedVector2Array(38.4957, 161.286, 158.645, 169.495, 199.69, 216.51, 199.69, 216.51, 269.839, 161.286, 183.708, 37.6404, 48.8764, 38.2022)
 
@@ -1548,7 +1548,7 @@ z_index = -1
 position = Vector2(-49.2957, 43.7384)
 rotation = -0.133476
 offset = Vector2(-81, -186)
-texture = ExtResource("1_eusk6")
+texture = ExtResource("2_pkkdr")
 polygon = PackedVector2Array(40.2985, 168.657, 108.955, 175.373, 100, 241.791, 31.3433, 250)
 uv = PackedVector2Array(40.2985, 168.657, 108.955, 175.373, 100, 241.791, 31.3433, 250)
 
@@ -1558,7 +1558,7 @@ z_index = -1
 position = Vector2(-56.0408, 38.5902)
 rotation = -0.133476
 offset = Vector2(-320, -700)
-texture = ExtResource("1_eusk6")
+texture = ExtResource("2_pkkdr")
 polygon = PackedVector2Array(279.104, 682.836, 347.761, 689.552, 338.806, 755.97, 270.149, 764.179)
 uv = PackedVector2Array(279.104, 682.836, 347.761, 689.552, 338.806, 755.97, 270.149, 764.179)
 
@@ -1567,7 +1567,7 @@ visible = false
 position = Vector2(4.38867, 0.206837)
 rotation = -0.133476
 offset = Vector2(-386, -650)
-texture = ExtResource("1_eusk6")
+texture = ExtResource("2_pkkdr")
 polygon = PackedVector2Array(273.803, 685.287, 393.952, 693.496, 434.997, 740.51, 434.997, 740.51, 466.667, 716.216, 439.64, 589.189, 286.486, 589.189)
 uv = PackedVector2Array(273.803, 685.287, 393.952, 693.496, 434.997, 740.51, 434.997, 740.51, 466.667, 716.216, 439.64, 589.189, 286.486, 589.189)
 
@@ -1575,7 +1575,7 @@ uv = PackedVector2Array(273.803, 685.287, 393.952, 693.496, 434.997, 740.51, 434
 show_behind_parent = true
 position = Vector2(-79, -71)
 offset = Vector2(-616, -432)
-texture = ExtResource("1_eusk6")
+texture = ExtResource("2_pkkdr")
 polygon = PackedVector2Array(587.755, 400.68, 587.755, 504.762, 635.374, 504.082, 634.694, 400.68)
 uv = PackedVector2Array(587.755, 400.68, 587.755, 504.762, 635.374, 504.082, 634.694, 400.68)
 bones = ["Hip", PackedFloat32Array(0, 0, 0, 0), "Hip/Torso", PackedFloat32Array(0, 0, 0, 0), "Hip/Torso/Left_Shoulder", PackedFloat32Array(0, 0, 0, 0), "Hip/Torso/Left_Shoulder/Left_Elbow", PackedFloat32Array(0, 0, 0, 0), "Hip/Torso/Left_Shoulder/Left_Elbow/Left_Hand", PackedFloat32Array(0, 0, 0, 0), "Hip/Torso/Right_Shoulder", PackedFloat32Array(0, 0, 0, 0), "Hip/Torso/Right_Shoulder/Right_Elbow", PackedFloat32Array(0, 0, 0, 0), "Hip/Torso/Right_Shoulder/Right_Elbow/Right_Hand", PackedFloat32Array(0, 0, 0, 0), "Hip/Torso/Right_Shoulder/Right_Elbow/Right_Hand/Flag", PackedFloat32Array(0, 0, 0, 0), "Hip/Torso/Head", PackedFloat32Array(0, 0, 0, 0), "Hip/Torso/Head/Jaw", PackedFloat32Array(0, 0, 0, 0), "Hip/Torso/Head/Headwear", PackedFloat32Array(0, 0, 0, 0), "Hip/Right_Leg", PackedFloat32Array(0, 0, 0, 0), "Hip/Right_Leg/Right_Knee", PackedFloat32Array(0, 0, 0, 0), "Hip/Right_Leg/Right_Knee/Right_Ankle", PackedFloat32Array(0, 0, 0, 0), "Hip/Right_Leg/Right_Knee/Right_Ankle/Right_Foot", PackedFloat32Array(0, 0, 0, 0), "Hip/Left_Leg", PackedFloat32Array(0, 0, 0, 0), "Hip/Left_Leg/Left_Knee", PackedFloat32Array(0, 0, 0, 0), "Hip/Left_Leg/Left_Knee/Left_Ankle", PackedFloat32Array(0, 0, 0, 0), "Hip/Left_Leg/Left_Knee/Left_Ankle/Left_Foot", PackedFloat32Array(0, 0, 0, 0)]
@@ -1585,7 +1585,7 @@ show_behind_parent = true
 position = Vector2(-4, 52)
 rotation = 0.000237829
 offset = Vector2(-614, -512)
-texture = ExtResource("1_eusk6")
+texture = ExtResource("2_pkkdr")
 polygon = PackedVector2Array(595.919, 502.041, 595.238, 589.796, 643.537, 589.116, 642.857, 502.041)
 uv = PackedVector2Array(595.919, 502.041, 595.238, 589.796, 643.537, 589.116, 642.857, 502.041)
 bones = ["Hip", PackedFloat32Array(0, 0, 0, 0), "Hip/Torso", PackedFloat32Array(0, 0, 0, 0), "Hip/Torso/Left_Shoulder", PackedFloat32Array(0, 0, 0, 0), "Hip/Torso/Left_Shoulder/Left_Elbow", PackedFloat32Array(0, 0, 0, 0), "Hip/Torso/Left_Shoulder/Left_Elbow/Left_Hand", PackedFloat32Array(0, 0, 0, 0), "Hip/Torso/Right_Shoulder", PackedFloat32Array(0, 0, 0, 0), "Hip/Torso/Right_Shoulder/Right_Elbow", PackedFloat32Array(0, 0, 0, 0), "Hip/Torso/Right_Shoulder/Right_Elbow/Right_Hand", PackedFloat32Array(0, 0, 0, 0), "Hip/Torso/Right_Shoulder/Right_Elbow/Right_Hand/Flag", PackedFloat32Array(0, 0, 0, 0), "Hip/Torso/Head", PackedFloat32Array(0, 0, 0, 0), "Hip/Torso/Head/Jaw", PackedFloat32Array(0, 0, 0, 0), "Hip/Torso/Head/Headwear", PackedFloat32Array(0, 0, 0, 0), "Hip/Right_Leg", PackedFloat32Array(0, 0, 0, 0), "Hip/Right_Leg/Right_Knee", PackedFloat32Array(0, 0, 0, 0), "Hip/Right_Leg/Right_Knee/Right_Ankle", PackedFloat32Array(0, 0, 0, 0), "Hip/Right_Leg/Right_Knee/Right_Ankle/Right_Foot", PackedFloat32Array(0, 0, 0, 0), "Hip/Left_Leg", PackedFloat32Array(0, 0, 0, 0), "Hip/Left_Leg/Left_Knee", PackedFloat32Array(0, 0, 0, 0), "Hip/Left_Leg/Left_Knee/Left_Ankle", PackedFloat32Array(0, 0, 0, 0), "Hip/Left_Leg/Left_Knee/Left_Ankle/Left_Foot", PackedFloat32Array(0, 0, 0, 0)]
@@ -1595,7 +1595,7 @@ show_behind_parent = true
 position = Vector2(-0.984802, 64.0002)
 rotation = 0.280961
 offset = Vector2(-612, -600)
-texture = ExtResource("1_eusk6")
+texture = ExtResource("2_pkkdr")
 polygon = PackedVector2Array(582.993, 594.558, 583.673, 663.265, 643.537, 663.265, 636.054, 589.796)
 uv = PackedVector2Array(582.993, 594.558, 583.673, 663.265, 643.537, 663.265, 636.054, 589.796)
 
@@ -1605,7 +1605,7 @@ show_behind_parent = true
 position = Vector2(-1.98474, 64.0005)
 rotation = -1.55533
 offset = Vector2(-604, -690)
-texture = ExtResource("1_eusk6")
+texture = ExtResource("2_pkkdr")
 polygon = PackedVector2Array(556.874, 660.976, 557.554, 729.683, 617.418, 729.683, 609.935, 656.214)
 uv = PackedVector2Array(556.874, 660.976, 557.554, 729.683, 617.418, 729.683, 609.935, 656.214)
 
@@ -1613,7 +1613,7 @@ uv = PackedVector2Array(556.874, 660.976, 557.554, 729.683, 617.418, 729.683, 60
 position = Vector2(-9.84171, 10.1558)
 rotation = -0.015708
 offset = Vector2(-168, -560)
-texture = ExtResource("1_eusk6")
+texture = ExtResource("2_pkkdr")
 polygon = PackedVector2Array(26.8657, 279.104, 168.657, 605.224, 288.06, 454.478, 205.224, 229.104)
 uv = PackedVector2Array(26.8657, 279.104, 168.657, 605.224, 288.06, 454.478, 205.224, 229.104)
 
@@ -1621,14 +1621,14 @@ uv = PackedVector2Array(26.8657, 279.104, 168.657, 605.224, 288.06, 454.478, 205
 position = Vector2(4.12515, 7.93616)
 rotation = -0.015708
 offset = Vector2(-544, -690)
-texture = ExtResource("1_eusk6")
+texture = ExtResource("2_pkkdr")
 polygon = PackedVector2Array(491.202, 657.244, 491.882, 725.952, 551.746, 725.952, 544.263, 652.482)
 uv = PackedVector2Array(491.202, 657.244, 491.882, 725.952, 551.746, 725.952, 544.263, 652.482)
 
 [node name="Left_Shoulder" type="Polygon2D" parent="Polygons/Hip/Torso"]
 position = Vector2(-18, -87)
 offset = Vector2(-880, -506)
-texture = ExtResource("1_eusk6")
+texture = ExtResource("2_pkkdr")
 polygon = PackedVector2Array(861.225, 490.476, 861.225, 594.558, 908.844, 593.878, 908.163, 490.476)
 uv = PackedVector2Array(861.225, 490.476, 861.225, 594.558, 908.844, 593.878, 908.163, 490.476)
 
@@ -1636,7 +1636,7 @@ uv = PackedVector2Array(861.225, 490.476, 861.225, 594.558, 908.844, 593.878, 90
 visible = false
 position = Vector2(0, 1)
 offset = Vector2(-823, -421)
-texture = ExtResource("1_eusk6")
+texture = ExtResource("2_pkkdr")
 polygon = PackedVector2Array(803.401, 404.082, 803.401, 508.163, 851.02, 507.483, 850.34, 404.082)
 uv = PackedVector2Array(803.401, 404.082, 803.401, 508.163, 851.02, 507.483, 850.34, 404.082)
 
@@ -1644,7 +1644,7 @@ uv = PackedVector2Array(803.401, 404.082, 803.401, 508.163, 851.02, 507.483, 850
 show_behind_parent = true
 position = Vector2(2, 60)
 offset = Vector2(-826, -520)
-texture = ExtResource("1_eusk6")
+texture = ExtResource("2_pkkdr")
 polygon = PackedVector2Array(804.762, 508.163, 804.762, 596.599, 853.741, 584.354, 851.02, 507.483)
 uv = PackedVector2Array(804.762, 508.163, 804.762, 596.599, 853.741, 584.354, 851.02, 507.483)
 
@@ -1652,7 +1652,7 @@ uv = PackedVector2Array(804.762, 508.163, 804.762, 596.599, 853.741, 584.354, 85
 show_behind_parent = true
 position = Vector2(-10, 69)
 offset = Vector2(-846, -599)
-texture = ExtResource("1_eusk6")
+texture = ExtResource("2_pkkdr")
 polygon = PackedVector2Array(819.728, 593.878, 820.408, 662.585, 880.272, 662.585, 872.789, 589.116)
 uv = PackedVector2Array(819.728, 593.878, 820.408, 662.585, 880.272, 662.585, 872.789, 589.116)
 
