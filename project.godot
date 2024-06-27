@@ -11,9 +11,14 @@ config_version=5
 [application]
 
 config/name="Zombie_Deformation_Test"
-run/main_scene="res://scenes/zombie.tscn"
+run/main_scene="res://scenes/levels/level.tscn"
 config/features=PackedStringArray("4.1", "Mobile")
 config/icon="res://assets/icon.svg"
+
+[display]
+
+window/size/viewport_width=1920
+window/size/viewport_height=1080
 
 [rendering]
 
