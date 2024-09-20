@@ -1,21 +1,680 @@
-[gd_scene load_steps=3 format=3 uid="uid://bw0tb6yjh4l5y"]
+[gd_scene load_steps=11 format=3 uid="uid://bw0tb6yjh4l5y"]
 
-[ext_resource type="Texture2D" uid="uid://dpp38s6id471s" path="res://assets/Untitled_Artwork.png" id="1_23w8p"]
-[ext_resource type="PackedScene" uid="uid://cfot0fffu6j2t" path="res://zombies/zombie.tscn" id="2_bm2e6"]
+[ext_resource type="Texture2D" uid="uid://dpp38s6id471s" path="res://assets/map/background/Untitled_Artwork.png" id="1_23w8p"]
+[ext_resource type="Script" path="res://scenes/levels/level.gd" id="1_eewh1"]
+[ext_resource type="PackedScene" uid="uid://cfot0fffu6j2t" path="res://scenes/zombies/zombie.tscn" id="2_bm2e6"]
+[ext_resource type="Texture2D" uid="uid://dgoraynflihyo" path="res://assets/map/tilesets/Tiles_V1.png" id="2_ceglb"]
+[ext_resource type="Script" path="res://scenes/levels/UI.gd" id="5_shsv4"]
+[ext_resource type="PackedScene" uid="uid://di0iy4h1qhndg" path="res://scenes/plants/peashooter.tscn" id="5_t0w44"]
+[ext_resource type="Texture2D" uid="uid://bpc0caummjddb" path="res://assets/icon.svg" id="6_fksj3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hxh3q"]
+size = Vector2(81, 80)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_272tt"]
+texture = ExtResource("2_ceglb")
+texture_region_size = Vector2i(150, 150)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_fnso5"]
+tile_size = Vector2i(150, 150)
+sources/0 = SubResource("TileSetAtlasSource_272tt")
 
 [node name="Level" type="Node2D"]
+script = ExtResource("1_eewh1")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(2089, 880)
+[node name="TestMap" type="Node" parent="."]
+
+[node name="Background" type="Sprite2D" parent="TestMap"]
+z_index = -1
+position = Vector2(1225, 532)
 texture = ExtResource("1_23w8p")
 
+[node name="Tiles" type="Node2D" parent="TestMap"]
+position = Vector2(286, 190)
+
+[node name="Tile11" type="StaticBody2D" parent="TestMap/Tiles"]
+
+[node name="Sprite" type="Sprite2D" parent="TestMap/Tiles/Tile11"]
+position = Vector2(76, 74)
+texture = ExtResource("2_ceglb")
+hframes = 3
+frame = 1
+
+[node name="Plant_Area" type="CollisionShape2D" parent="TestMap/Tiles/Tile11"]
+position = Vector2(76, 75)
+shape = SubResource("RectangleShape2D_hxh3q")
+
+[node name="Tile12" type="StaticBody2D" parent="TestMap/Tiles"]
+position = Vector2(150, 0)
+
+[node name="Sprite" type="Sprite2D" parent="TestMap/Tiles/Tile12"]
+position = Vector2(76, 74)
+texture = ExtResource("2_ceglb")
+hframes = 3
+frame = 1
+
+[node name="Plant_Area" type="CollisionShape2D" parent="TestMap/Tiles/Tile12"]
+position = Vector2(76, 75)
+shape = SubResource("RectangleShape2D_hxh3q")
+
+[node name="Tile13" type="StaticBody2D" parent="TestMap/Tiles"]
+position = Vector2(300, 0)
+
+[node name="Sprite" type="Sprite2D" parent="TestMap/Tiles/Tile13"]
+position = Vector2(76, 74)
+texture = ExtResource("2_ceglb")
+hframes = 3
+frame = 1
+
+[node name="Plant_Area" type="CollisionShape2D" parent="TestMap/Tiles/Tile13"]
+position = Vector2(76, 75)
+shape = SubResource("RectangleShape2D_hxh3q")
+
+[node name="Tile14" type="StaticBody2D" parent="TestMap/Tiles"]
+position = Vector2(450, 0)
+
+[node name="Sprite" type="Sprite2D" parent="TestMap/Tiles/Tile14"]
+position = Vector2(76, 74)
+texture = ExtResource("2_ceglb")
+hframes = 3
+frame = 1
+
+[node name="Plant_Area" type="CollisionShape2D" parent="TestMap/Tiles/Tile14"]
+position = Vector2(76, 75)
+shape = SubResource("RectangleShape2D_hxh3q")
+
+[node name="Tile15" type="StaticBody2D" parent="TestMap/Tiles"]
+position = Vector2(600, 0)
+
+[node name="Sprite" type="Sprite2D" parent="TestMap/Tiles/Tile15"]
+position = Vector2(76, 74)
+texture = ExtResource("2_ceglb")
+hframes = 3
+frame = 1
+
+[node name="Plant_Area" type="CollisionShape2D" parent="TestMap/Tiles/Tile15"]
+position = Vector2(76, 75)
+shape = SubResource("RectangleShape2D_hxh3q")
+
+[node name="Tile16" type="StaticBody2D" parent="TestMap/Tiles"]
+position = Vector2(750, 0)
+
+[node name="Sprite" type="Sprite2D" parent="TestMap/Tiles/Tile16"]
+position = Vector2(76, 74)
+texture = ExtResource("2_ceglb")
+hframes = 3
+frame = 1
+
+[node name="Plant_Area" type="CollisionShape2D" parent="TestMap/Tiles/Tile16"]
+position = Vector2(76, 75)
+shape = SubResource("RectangleShape2D_hxh3q")
+
+[node name="Tile17" type="StaticBody2D" parent="TestMap/Tiles"]
+position = Vector2(900, 0)
+
+[node name="Sprite" type="Sprite2D" parent="TestMap/Tiles/Tile17"]
+position = Vector2(76, 74)
+texture = ExtResource("2_ceglb")
+hframes = 3
+frame = 1
+
+[node name="Plant_Area" type="CollisionShape2D" parent="TestMap/Tiles/Tile17"]
+position = Vector2(76, 75)
+shape = SubResource("RectangleShape2D_hxh3q")
+
+[node name="Tile18" type="StaticBody2D" parent="TestMap/Tiles"]
+position = Vector2(1050, 0)
+
+[node name="Sprite" type="Sprite2D" parent="TestMap/Tiles/Tile18"]
+position = Vector2(76, 74)
+texture = ExtResource("2_ceglb")
+hframes = 3
+frame = 1
+
+[node name="Plant_Area" type="CollisionShape2D" parent="TestMap/Tiles/Tile18"]
+position = Vector2(76, 75)
+shape = SubResource("RectangleShape2D_hxh3q")
+
+[node name="Tile19" type="StaticBody2D" parent="TestMap/Tiles"]
+position = Vector2(1200, 0)
+
+[node name="Sprite" type="Sprite2D" parent="TestMap/Tiles/Tile19"]
+position = Vector2(76, 74)
+texture = ExtResource("2_ceglb")
+hframes = 3
+frame = 1
+
+[node name="Plant_Area" type="CollisionShape2D" parent="TestMap/Tiles/Tile19"]
+position = Vector2(76, 75)
+shape = SubResource("RectangleShape2D_hxh3q")
+
+[node name="Tile21" type="StaticBody2D" parent="TestMap/Tiles"]
+position = Vector2(0, 150)
+
+[node name="Sprite" type="Sprite2D" parent="TestMap/Tiles/Tile21"]
+position = Vector2(76, 74)
+texture = ExtResource("2_ceglb")
+hframes = 3
+frame = 1
+
+[node name="Plant_Area" type="CollisionShape2D" parent="TestMap/Tiles/Tile21"]
+position = Vector2(76, 75)
+shape = SubResource("RectangleShape2D_hxh3q")
+
+[node name="Tile22" type="StaticBody2D" parent="TestMap/Tiles"]
+position = Vector2(150, 150)
+
+[node name="Sprite" type="Sprite2D" parent="TestMap/Tiles/Tile22"]
+position = Vector2(76, 74)
+texture = ExtResource("2_ceglb")
+hframes = 3
+frame = 1
+
+[node name="Plant_Area" type="CollisionShape2D" parent="TestMap/Tiles/Tile22"]
+position = Vector2(76, 75)
+shape = SubResource("RectangleShape2D_hxh3q")
+
+[node name="Tile23" type="StaticBody2D" parent="TestMap/Tiles"]
+position = Vector2(300, 150)
+
+[node name="Sprite" type="Sprite2D" parent="TestMap/Tiles/Tile23"]
+position = Vector2(76, 74)
+texture = ExtResource("2_ceglb")
+hframes = 3
+frame = 1
+
+[node name="Plant_Area" type="CollisionShape2D" parent="TestMap/Tiles/Tile23"]
+position = Vector2(76, 75)
+shape = SubResource("RectangleShape2D_hxh3q")
+
+[node name="Tile24" type="StaticBody2D" parent="TestMap/Tiles"]
+position = Vector2(450, 150)
+
+[node name="Sprite" type="Sprite2D" parent="TestMap/Tiles/Tile24"]
+position = Vector2(76, 74)
+texture = ExtResource("2_ceglb")
+hframes = 3
+frame = 1
+
+[node name="Plant_Area" type="CollisionShape2D" parent="TestMap/Tiles/Tile24"]
+position = Vector2(76, 75)
+shape = SubResource("RectangleShape2D_hxh3q")
+
+[node name="Tile25" type="StaticBody2D" parent="TestMap/Tiles"]
+position = Vector2(600, 150)
+
+[node name="Sprite" type="Sprite2D" parent="TestMap/Tiles/Tile25"]
+position = Vector2(76, 74)
+texture = ExtResource("2_ceglb")
+hframes = 3
+frame = 1
+
+[node name="Plant_Area" type="CollisionShape2D" parent="TestMap/Tiles/Tile25"]
+position = Vector2(76, 75)
+shape = SubResource("RectangleShape2D_hxh3q")
+
+[node name="Tile26" type="StaticBody2D" parent="TestMap/Tiles"]
+position = Vector2(750, 150)
+
+[node name="Sprite" type="Sprite2D" parent="TestMap/Tiles/Tile26"]
+position = Vector2(76, 74)
+texture = ExtResource("2_ceglb")
+hframes = 3
+frame = 1
+
+[node name="Plant_Area" type="CollisionShape2D" parent="TestMap/Tiles/Tile26"]
+position = Vector2(76, 75)
+shape = SubResource("RectangleShape2D_hxh3q")
+
+[node name="Tile27" type="StaticBody2D" parent="TestMap/Tiles"]
+position = Vector2(900, 150)
+
+[node name="Sprite" type="Sprite2D" parent="TestMap/Tiles/Tile27"]
+position = Vector2(76, 74)
+texture = ExtResource("2_ceglb")
+hframes = 3
+frame = 1
+
+[node name="Plant_Area" type="CollisionShape2D" parent="TestMap/Tiles/Tile27"]
+position = Vector2(76, 75)
+shape = SubResource("RectangleShape2D_hxh3q")
+
+[node name="Tile28" type="StaticBody2D" parent="TestMap/Tiles"]
+position = Vector2(1050, 150)
+
+[node name="Sprite" type="Sprite2D" parent="TestMap/Tiles/Tile28"]
+position = Vector2(76, 74)
+texture = ExtResource("2_ceglb")
+hframes = 3
+frame = 1
+
+[node name="Plant_Area" type="CollisionShape2D" parent="TestMap/Tiles/Tile28"]
+position = Vector2(76, 75)
+shape = SubResource("RectangleShape2D_hxh3q")
+
+[node name="Tile29" type="StaticBody2D" parent="TestMap/Tiles"]
+position = Vector2(1200, 150)
+
+[node name="Sprite" type="Sprite2D" parent="TestMap/Tiles/Tile29"]
+position = Vector2(76, 74)
+texture = ExtResource("2_ceglb")
+hframes = 3
+frame = 1
+
+[node name="Plant_Area" type="CollisionShape2D" parent="TestMap/Tiles/Tile29"]
+position = Vector2(76, 75)
+shape = SubResource("RectangleShape2D_hxh3q")
+
+[node name="Tile31" type="StaticBody2D" parent="TestMap/Tiles"]
+position = Vector2(0, 300)
+
+[node name="Sprite" type="Sprite2D" parent="TestMap/Tiles/Tile31"]
+position = Vector2(76, 74)
+texture = ExtResource("2_ceglb")
+hframes = 3
+frame = 1
+
+[node name="Plant_Area" type="CollisionShape2D" parent="TestMap/Tiles/Tile31"]
+position = Vector2(76, 75)
+shape = SubResource("RectangleShape2D_hxh3q")
+
+[node name="Tile32" type="StaticBody2D" parent="TestMap/Tiles"]
+position = Vector2(150, 300)
+
+[node name="Sprite" type="Sprite2D" parent="TestMap/Tiles/Tile32"]
+position = Vector2(76, 74)
+texture = ExtResource("2_ceglb")
+hframes = 3
+frame = 1
+
+[node name="Plant_Area" type="CollisionShape2D" parent="TestMap/Tiles/Tile32"]
+position = Vector2(76, 75)
+shape = SubResource("RectangleShape2D_hxh3q")
+
+[node name="Tile33" type="StaticBody2D" parent="TestMap/Tiles"]
+position = Vector2(300, 300)
+
+[node name="Sprite" type="Sprite2D" parent="TestMap/Tiles/Tile33"]
+position = Vector2(76, 74)
+texture = ExtResource("2_ceglb")
+hframes = 3
+frame = 1
+
+[node name="Plant_Area" type="CollisionShape2D" parent="TestMap/Tiles/Tile33"]
+position = Vector2(76, 75)
+shape = SubResource("RectangleShape2D_hxh3q")
+
+[node name="Tile34" type="StaticBody2D" parent="TestMap/Tiles"]
+position = Vector2(450, 300)
+
+[node name="Sprite" type="Sprite2D" parent="TestMap/Tiles/Tile34"]
+position = Vector2(76, 74)
+texture = ExtResource("2_ceglb")
+hframes = 3
+frame = 1
+
+[node name="Plant_Area" type="CollisionShape2D" parent="TestMap/Tiles/Tile34"]
+position = Vector2(76, 75)
+shape = SubResource("RectangleShape2D_hxh3q")
+
+[node name="Tile35" type="StaticBody2D" parent="TestMap/Tiles"]
+position = Vector2(600, 300)
+
+[node name="Sprite" type="Sprite2D" parent="TestMap/Tiles/Tile35"]
+position = Vector2(76, 74)
+texture = ExtResource("2_ceglb")
+hframes = 3
+frame = 1
+
+[node name="Plant_Area" type="CollisionShape2D" parent="TestMap/Tiles/Tile35"]
+position = Vector2(76, 75)
+shape = SubResource("RectangleShape2D_hxh3q")
+
+[node name="Tile36" type="StaticBody2D" parent="TestMap/Tiles"]
+position = Vector2(750, 300)
+
+[node name="Sprite" type="Sprite2D" parent="TestMap/Tiles/Tile36"]
+position = Vector2(76, 74)
+texture = ExtResource("2_ceglb")
+hframes = 3
+frame = 1
+
+[node name="Plant_Area" type="CollisionShape2D" parent="TestMap/Tiles/Tile36"]
+position = Vector2(76, 75)
+shape = SubResource("RectangleShape2D_hxh3q")
+
+[node name="Tile37" type="StaticBody2D" parent="TestMap/Tiles"]
+position = Vector2(900, 300)
+
+[node name="Sprite" type="Sprite2D" parent="TestMap/Tiles/Tile37"]
+position = Vector2(76, 74)
+texture = ExtResource("2_ceglb")
+hframes = 3
+frame = 1
+
+[node name="Plant_Area" type="CollisionShape2D" parent="TestMap/Tiles/Tile37"]
+position = Vector2(76, 75)
+shape = SubResource("RectangleShape2D_hxh3q")
+
+[node name="Tile38" type="StaticBody2D" parent="TestMap/Tiles"]
+position = Vector2(1050, 300)
+
+[node name="Sprite" type="Sprite2D" parent="TestMap/Tiles/Tile38"]
+position = Vector2(76, 74)
+texture = ExtResource("2_ceglb")
+hframes = 3
+frame = 1
+
+[node name="Plant_Area" type="CollisionShape2D" parent="TestMap/Tiles/Tile38"]
+position = Vector2(76, 75)
+shape = SubResource("RectangleShape2D_hxh3q")
+
+[node name="Tile39" type="StaticBody2D" parent="TestMap/Tiles"]
+position = Vector2(1200, 300)
+
+[node name="Sprite" type="Sprite2D" parent="TestMap/Tiles/Tile39"]
+position = Vector2(76, 74)
+texture = ExtResource("2_ceglb")
+hframes = 3
+frame = 1
+
+[node name="Plant_Area" type="CollisionShape2D" parent="TestMap/Tiles/Tile39"]
+position = Vector2(76, 75)
+shape = SubResource("RectangleShape2D_hxh3q")
+
+[node name="Tile41" type="StaticBody2D" parent="TestMap/Tiles"]
+position = Vector2(0, 450)
+
+[node name="Sprite" type="Sprite2D" parent="TestMap/Tiles/Tile41"]
+position = Vector2(76, 74)
+texture = ExtResource("2_ceglb")
+hframes = 3
+frame = 1
+
+[node name="Plant_Area" type="CollisionShape2D" parent="TestMap/Tiles/Tile41"]
+position = Vector2(76, 75)
+shape = SubResource("RectangleShape2D_hxh3q")
+
+[node name="Tile42" type="StaticBody2D" parent="TestMap/Tiles"]
+position = Vector2(150, 450)
+
+[node name="Sprite" type="Sprite2D" parent="TestMap/Tiles/Tile42"]
+position = Vector2(76, 74)
+texture = ExtResource("2_ceglb")
+hframes = 3
+frame = 1
+
+[node name="Plant_Area" type="CollisionShape2D" parent="TestMap/Tiles/Tile42"]
+position = Vector2(76, 75)
+shape = SubResource("RectangleShape2D_hxh3q")
+
+[node name="Tile43" type="StaticBody2D" parent="TestMap/Tiles"]
+position = Vector2(300, 450)
+
+[node name="Sprite" type="Sprite2D" parent="TestMap/Tiles/Tile43"]
+position = Vector2(76, 74)
+texture = ExtResource("2_ceglb")
+hframes = 3
+frame = 1
+
+[node name="Plant_Area" type="CollisionShape2D" parent="TestMap/Tiles/Tile43"]
+position = Vector2(76, 75)
+shape = SubResource("RectangleShape2D_hxh3q")
+
+[node name="Tile44" type="StaticBody2D" parent="TestMap/Tiles"]
+position = Vector2(450, 450)
+
+[node name="Sprite" type="Sprite2D" parent="TestMap/Tiles/Tile44"]
+position = Vector2(76, 74)
+texture = ExtResource("2_ceglb")
+hframes = 3
+frame = 1
+
+[node name="Plant_Area" type="CollisionShape2D" parent="TestMap/Tiles/Tile44"]
+position = Vector2(76, 75)
+shape = SubResource("RectangleShape2D_hxh3q")
+
+[node name="Tile45" type="StaticBody2D" parent="TestMap/Tiles"]
+position = Vector2(600, 450)
+
+[node name="Sprite" type="Sprite2D" parent="TestMap/Tiles/Tile45"]
+position = Vector2(76, 74)
+texture = ExtResource("2_ceglb")
+hframes = 3
+frame = 1
+
+[node name="Plant_Area" type="CollisionShape2D" parent="TestMap/Tiles/Tile45"]
+position = Vector2(76, 75)
+shape = SubResource("RectangleShape2D_hxh3q")
+
+[node name="Tile46" type="StaticBody2D" parent="TestMap/Tiles"]
+position = Vector2(750, 450)
+
+[node name="Sprite" type="Sprite2D" parent="TestMap/Tiles/Tile46"]
+position = Vector2(76, 74)
+texture = ExtResource("2_ceglb")
+hframes = 3
+frame = 1
+
+[node name="Plant_Area" type="CollisionShape2D" parent="TestMap/Tiles/Tile46"]
+position = Vector2(76, 75)
+shape = SubResource("RectangleShape2D_hxh3q")
+
+[node name="Tile47" type="StaticBody2D" parent="TestMap/Tiles"]
+position = Vector2(900, 450)
+
+[node name="Sprite" type="Sprite2D" parent="TestMap/Tiles/Tile47"]
+position = Vector2(76, 74)
+texture = ExtResource("2_ceglb")
+hframes = 3
+frame = 1
+
+[node name="Plant_Area" type="CollisionShape2D" parent="TestMap/Tiles/Tile47"]
+position = Vector2(76, 75)
+shape = SubResource("RectangleShape2D_hxh3q")
+
+[node name="Tile48" type="StaticBody2D" parent="TestMap/Tiles"]
+position = Vector2(1050, 450)
+
+[node name="Sprite" type="Sprite2D" parent="TestMap/Tiles/Tile48"]
+position = Vector2(76, 74)
+texture = ExtResource("2_ceglb")
+hframes = 3
+frame = 1
+
+[node name="Plant_Area" type="CollisionShape2D" parent="TestMap/Tiles/Tile48"]
+position = Vector2(76, 75)
+shape = SubResource("RectangleShape2D_hxh3q")
+
+[node name="Tile49" type="StaticBody2D" parent="TestMap/Tiles"]
+position = Vector2(1200, 450)
+
+[node name="Sprite" type="Sprite2D" parent="TestMap/Tiles/Tile49"]
+position = Vector2(76, 74)
+texture = ExtResource("2_ceglb")
+hframes = 3
+frame = 1
+
+[node name="Plant_Area" type="CollisionShape2D" parent="TestMap/Tiles/Tile49"]
+position = Vector2(76, 75)
+shape = SubResource("RectangleShape2D_hxh3q")
+
+[node name="Tile51" type="StaticBody2D" parent="TestMap/Tiles"]
+position = Vector2(0, 600)
+
+[node name="Sprite" type="Sprite2D" parent="TestMap/Tiles/Tile51"]
+position = Vector2(76, 74)
+texture = ExtResource("2_ceglb")
+hframes = 3
+frame = 1
+
+[node name="Plant_Area" type="CollisionShape2D" parent="TestMap/Tiles/Tile51"]
+position = Vector2(76, 75)
+shape = SubResource("RectangleShape2D_hxh3q")
+
+[node name="Tile52" type="StaticBody2D" parent="TestMap/Tiles"]
+position = Vector2(150, 600)
+
+[node name="Sprite" type="Sprite2D" parent="TestMap/Tiles/Tile52"]
+position = Vector2(76, 74)
+texture = ExtResource("2_ceglb")
+hframes = 3
+frame = 1
+
+[node name="Plant_Area" type="CollisionShape2D" parent="TestMap/Tiles/Tile52"]
+position = Vector2(76, 75)
+shape = SubResource("RectangleShape2D_hxh3q")
+
+[node name="Tile53" type="StaticBody2D" parent="TestMap/Tiles"]
+position = Vector2(300, 600)
+
+[node name="Sprite" type="Sprite2D" parent="TestMap/Tiles/Tile53"]
+position = Vector2(76, 74)
+texture = ExtResource("2_ceglb")
+hframes = 3
+frame = 1
+
+[node name="Plant_Area" type="CollisionShape2D" parent="TestMap/Tiles/Tile53"]
+position = Vector2(76, 75)
+shape = SubResource("RectangleShape2D_hxh3q")
+
+[node name="Tile54" type="StaticBody2D" parent="TestMap/Tiles"]
+position = Vector2(450, 600)
+
+[node name="Sprite" type="Sprite2D" parent="TestMap/Tiles/Tile54"]
+position = Vector2(76, 74)
+texture = ExtResource("2_ceglb")
+hframes = 3
+frame = 1
+
+[node name="Plant_Area" type="CollisionShape2D" parent="TestMap/Tiles/Tile54"]
+position = Vector2(76, 75)
+shape = SubResource("RectangleShape2D_hxh3q")
+
+[node name="Tile55" type="StaticBody2D" parent="TestMap/Tiles"]
+position = Vector2(600, 600)
+
+[node name="Sprite" type="Sprite2D" parent="TestMap/Tiles/Tile55"]
+position = Vector2(76, 74)
+texture = ExtResource("2_ceglb")
+hframes = 3
+frame = 1
+
+[node name="Plant_Area" type="CollisionShape2D" parent="TestMap/Tiles/Tile55"]
+position = Vector2(76, 75)
+shape = SubResource("RectangleShape2D_hxh3q")
+
+[node name="Tile56" type="StaticBody2D" parent="TestMap/Tiles"]
+position = Vector2(750, 600)
+
+[node name="Sprite" type="Sprite2D" parent="TestMap/Tiles/Tile56"]
+position = Vector2(76, 74)
+texture = ExtResource("2_ceglb")
+hframes = 3
+frame = 1
+
+[node name="Plant_Area" type="CollisionShape2D" parent="TestMap/Tiles/Tile56"]
+position = Vector2(76, 75)
+shape = SubResource("RectangleShape2D_hxh3q")
+
+[node name="Tile57" type="StaticBody2D" parent="TestMap/Tiles"]
+position = Vector2(900, 600)
+
+[node name="Sprite" type="Sprite2D" parent="TestMap/Tiles/Tile57"]
+position = Vector2(76, 74)
+texture = ExtResource("2_ceglb")
+hframes = 3
+frame = 1
+
+[node name="Plant_Area" type="CollisionShape2D" parent="TestMap/Tiles/Tile57"]
+position = Vector2(76, 75)
+shape = SubResource("RectangleShape2D_hxh3q")
+
+[node name="Tile58" type="StaticBody2D" parent="TestMap/Tiles"]
+position = Vector2(1050, 600)
+
+[node name="Sprite" type="Sprite2D" parent="TestMap/Tiles/Tile58"]
+position = Vector2(76, 74)
+texture = ExtResource("2_ceglb")
+hframes = 3
+frame = 1
+
+[node name="Plant_Area" type="CollisionShape2D" parent="TestMap/Tiles/Tile58"]
+position = Vector2(76, 75)
+shape = SubResource("RectangleShape2D_hxh3q")
+
+[node name="Tile59" type="StaticBody2D" parent="TestMap/Tiles"]
+position = Vector2(1200, 600)
+
+[node name="Sprite" type="Sprite2D" parent="TestMap/Tiles/Tile59"]
+position = Vector2(76, 74)
+texture = ExtResource("2_ceglb")
+hframes = 3
+frame = 1
+
+[node name="Plant_Area" type="CollisionShape2D" parent="TestMap/Tiles/Tile59"]
+position = Vector2(76, 75)
+shape = SubResource("RectangleShape2D_hxh3q")
+
+[node name="BaseTiles" type="TileMap" parent="TestMap"]
+visible = false
+z_index = -1
+position = Vector2(286, 190)
+tile_set = SubResource("TileSet_fnso5")
+format = 2
+layer_0/tile_data = PackedInt32Array(0, 65536, 0, 65536, 131072, 0, 65537, 65536, 0, 65538, 65536, 0, 131074, 0, 0, 131075, 0, 0, 131076, 0, 0, 196613, 0, 0, 196614, 0, 0, 262151, 0, 0, 262152, 131072, 0, 262150, 0, 0, 196612, 0, 0, 196615, 131072, 0, 131078, 0, 0, 131077, 131072, 0, 65539, 131072, 0, 65540, 131072, 0, 1, 65536, 0, 2, 65536, 0, 131072, 65536, 0, 131073, 131072, 0, 196610, 131072, 0, 196611, 0, 0, 262149, 131072, 0, 262148, 131072, 0, 196608, 65536, 0, 196609, 65536, 0, 262144, 65536, 0, 262145, 131072, 0, 262146, 131072, 0, 262147, 131072, 0, 3, 65536, 0, 4, 131072, 0, 5, 131072, 0, 65541, 131072, 0, 65542, 131072, 0, 6, 131072, 0, 7, 0, 0, 65543, 0, 0, 131079, 0, 0, 196616, 131072, 0, 131080, 131072, 0, 65544, 0, 0, 8, 0, 0)
+
+[node name="PlantExclusion" type="TileMap" parent="TestMap"]
+visible = false
+z_index = -1
+tile_set = SubResource("TileSet_fnso5")
+format = 2
+layer_0/tile_data = PackedInt32Array(65536, 131072, 0, 262152, 131072, 0, 196615, 131072, 0, 131077, 131072, 0, 65539, 131072, 0, 65540, 131072, 0, 131073, 131072, 0, 196610, 131072, 0, 262149, 131072, 0, 262148, 131072, 0, 262145, 131072, 0, 262146, 131072, 0, 262147, 131072, 0, 4, 131072, 0, 5, 131072, 0, 65541, 131072, 0, 65542, 131072, 0, 6, 131072, 0, 196616, 131072, 0, 131080, 131072, 0)
+
+[node name="Plants" type="Node" parent="TestMap"]
+
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(1808, 876)
+position = Vector2(960, 540)
 
 [node name="Zombie" parent="." instance=ExtResource("2_bm2e6")]
-position = Vector2(2067, 606)
-scale = Vector2(0.55, 0.55)
+z_index = 1
+position = Vector2(1478, 528)
+scale = Vector2(0.6, 0.6)
 
-[node name="Seed_Placeholder" type="Polygon2D" parent="."]
-position = Vector2(-88, 50)
-polygon = PackedVector2Array(994, 477, 993, 477, 993, 568, 1133, 568, 1133, 477)
+[node name="UI" type="CanvasLayer" parent="."]
+script = ExtResource("5_shsv4")
+
+[node name="HUD" type="Control" parent="UI"]
+custom_minimum_size = Vector2(1920, 1080)
+layout_mode = 3
+anchors_preset = 0
+offset_left = 3.0
+offset_right = 43.0
+offset_bottom = 40.0
+mouse_filter = 2
+
+[node name="BuildBar" type="VBoxContainer" parent="UI/HUD"]
+custom_minimum_size = Vector2(200, 800)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="peashooter" type="TextureButton" parent="UI/HUD/BuildBar" groups=["build_buttons"]]
+custom_minimum_size = Vector2(100, 80)
+layout_mode = 2
+texture_normal = ExtResource("6_fksj3")
+stretch_mode = 0
+
+[node name="somethingIDK" type="TextureRect" parent="UI/HUD/BuildBar/peashooter"]
+visible = false
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="peashooter" parent="." instance=ExtResource("5_t0w44")]
+visible = false
+z_index = 1
+position = Vector2(1226, 951)
