@@ -7,6 +7,9 @@ var build_valid = false
 var build_location
 var build_type
 var new_tower
+var sun = 100
+var sun_to_subtract
+var sun_timer = 5
 
 var map_layout = [0, 0, 0, 0, 0, 0, 0, 0, 0,
 0, 0, 0, 0, 0, 0, 0, 0, 0,
@@ -20,11 +23,19 @@ func _ready():
 	map_node = get_node("TestMap")
 	#tile_node = get_node("TestMap/Tiles")
 	for i in get_tree().get_nodes_in_group("build_buttons"):
-		i.pressed.connect(initiate_build_mode.bind(i.name))
+		i.pressed.connect(initiate_build_mode.bind(i.name, int (i.get_child(0).get_text()), i.get_index()))
 	
 func _process(delta):
 	if build_mode:
 		update_plant_preview()
+	sun_timer -= delta
+	if sun_timer <= 0:
+		var new_sun = load("res://scenes/interactables/sun.tscn").instantiate()
+		get_node("Suns").add_child(new_sun, true)
+		new_sun.position.x = randf_range(286, 1636)
+		new_sun.stop_point = randi_range(1, 5) * 150 + 190
+		new_sun.velocity_y = 10
+		sun_timer = randf_range(15, 25)
 	
 func _unhandled_input(event):
 	if event.is_action_released("ui_cancel") and build_mode == true:
@@ -35,13 +46,14 @@ func _unhandled_input(event):
 		verify_and_build()
 		cancel_build_mode(false)
 	
-func initiate_build_mode(plant_type):
+func initiate_build_mode(plant_type, sun_cost, idx):
 	print("build attampt made")
-	if !build_mode:
+	if !build_mode && sun >= sun_cost:
+		sun_to_subtract = sun_cost
 		#print("build successful")
 		build_type = plant_type #+ "T1"
 		build_mode = true 
-		get_node("UI").set_plant_preview(build_type, get_global_mouse_position())
+		get_node("UI").set_plant_preview(build_type, get_global_mouse_position(), idx)
 		#print("instance from build mode initiation")
 		new_tower = load("res://scenes/plants/" + build_type + ".tscn").instantiate()
 		map_node.get_node("Plants").add_child(new_tower, true)
@@ -90,10 +102,16 @@ func verify_and_build():
 		#print("built")
 		map_layout[curr_idx] = 1
 		new_tower.visible = true
-		new_tower.stop_placement()
+		var column_node = get_node("Zombies/Column" + str(curr_idx/9))
+		new_tower.stop_placement(curr_idx%9, curr_idx/9)
 		map_node.get_node("Plants").add_child(new_tower, true)
+		update_sun(-sun_to_subtract)
 
 func update_tile_snap(xpos, ypos, isvisible):
 	new_tower.visible = isvisible
 	new_tower.position.x = xpos
 	new_tower.position.y = ypos
+
+func update_sun(value):
+	sun += value
+	$UI/HUD/SunUI/sun.set_text(str(sun))

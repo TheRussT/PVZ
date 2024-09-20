@@ -1,12 +1,18 @@
-[gd_scene load_steps=11 format=3 uid="uid://bw0tb6yjh4l5y"]
+[gd_scene load_steps=19 format=3 uid="uid://bw0tb6yjh4l5y"]
 
-[ext_resource type="Texture2D" uid="uid://dpp38s6id471s" path="res://assets/map/background/Untitled_Artwork.png" id="1_23w8p"]
 [ext_resource type="Script" path="res://scenes/levels/level.gd" id="1_eewh1"]
+[ext_resource type="Texture2D" uid="uid://cseq2rxg575uf" path="res://assets/map/tilesets/Tiles_V2.png" id="2_2dygq"]
+[ext_resource type="Texture2D" uid="uid://bvk2531m45iil" path="res://assets/map/background/Background_2.0.png" id="2_4sf3w"]
 [ext_resource type="PackedScene" uid="uid://cfot0fffu6j2t" path="res://scenes/zombies/zombie.tscn" id="2_bm2e6"]
 [ext_resource type="Texture2D" uid="uid://dgoraynflihyo" path="res://assets/map/tilesets/Tiles_V1.png" id="2_ceglb"]
 [ext_resource type="Script" path="res://scenes/levels/UI.gd" id="5_shsv4"]
 [ext_resource type="PackedScene" uid="uid://di0iy4h1qhndg" path="res://scenes/plants/peashooter.tscn" id="5_t0w44"]
-[ext_resource type="Texture2D" uid="uid://bpc0caummjddb" path="res://assets/icon.svg" id="6_fksj3"]
+[ext_resource type="Texture2D" uid="uid://bck0f32wkr3et" path="res://assets/ui/Seed_Packet_Background.png" id="6_hvr8o"]
+[ext_resource type="Texture2D" uid="uid://6bchapvda3xj" path="res://assets/ui/Seed_packet.png" id="7_s04gi"]
+[ext_resource type="Texture2D" uid="uid://c5mktatbgcc0l" path="res://assets/plants/peashooter.png" id="8_fyqwv"]
+[ext_resource type="FontFile" uid="uid://d37q4w7dexfql" path="res://assets/OkNoted.otf" id="9_c4nsk"]
+[ext_resource type="Texture2D" uid="uid://c1en8xlc2ipoi" path="res://assets/plants/Sunflower.png" id="10_1dey5"]
+[ext_resource type="Texture2D" uid="uid://ou6niut4dfhn" path="res://assets/ui/Sun.png" id="11_6c2ol"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hxh3q"]
 size = Vector2(81, 80)
@@ -22,6 +28,15 @@ texture_region_size = Vector2i(150, 150)
 tile_size = Vector2i(150, 150)
 sources/0 = SubResource("TileSetAtlasSource_272tt")
 
+[sub_resource type="LabelSettings" id="LabelSettings_sp3tp"]
+font = ExtResource("9_c4nsk")
+font_size = 20
+font_color = Color(0.258824, 0.12549, 0.0705882, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_818re"]
+font = ExtResource("9_c4nsk")
+font_size = 54
+
 [node name="Level" type="Node2D"]
 script = ExtResource("1_eewh1")
 
@@ -29,8 +44,8 @@ script = ExtResource("1_eewh1")
 
 [node name="Background" type="Sprite2D" parent="TestMap"]
 z_index = -1
-position = Vector2(1225, 532)
-texture = ExtResource("1_23w8p")
+position = Vector2(1139, 455)
+texture = ExtResource("2_4sf3w")
 
 [node name="Tiles" type="Node2D" parent="TestMap"]
 position = Vector2(286, 190)
@@ -39,8 +54,9 @@ position = Vector2(286, 190)
 
 [node name="Sprite" type="Sprite2D" parent="TestMap/Tiles/Tile11"]
 position = Vector2(76, 74)
-texture = ExtResource("2_ceglb")
-hframes = 3
+texture = ExtResource("2_2dygq")
+hframes = 6
+vframes = 2
 frame = 1
 
 [node name="Plant_Area" type="CollisionShape2D" parent="TestMap/Tiles/Tile11"]
@@ -52,9 +68,10 @@ position = Vector2(150, 0)
 
 [node name="Sprite" type="Sprite2D" parent="TestMap/Tiles/Tile12"]
 position = Vector2(76, 74)
-texture = ExtResource("2_ceglb")
-hframes = 3
-frame = 1
+texture = ExtResource("2_2dygq")
+hframes = 6
+vframes = 2
+frame = 6
 
 [node name="Plant_Area" type="CollisionShape2D" parent="TestMap/Tiles/Tile12"]
 position = Vector2(76, 75)
@@ -65,9 +82,9 @@ position = Vector2(300, 0)
 
 [node name="Sprite" type="Sprite2D" parent="TestMap/Tiles/Tile13"]
 position = Vector2(76, 74)
-texture = ExtResource("2_ceglb")
-hframes = 3
-frame = 1
+texture = ExtResource("2_2dygq")
+hframes = 6
+vframes = 2
 
 [node name="Plant_Area" type="CollisionShape2D" parent="TestMap/Tiles/Tile13"]
 position = Vector2(76, 75)
@@ -78,9 +95,10 @@ position = Vector2(450, 0)
 
 [node name="Sprite" type="Sprite2D" parent="TestMap/Tiles/Tile14"]
 position = Vector2(76, 74)
-texture = ExtResource("2_ceglb")
-hframes = 3
-frame = 1
+texture = ExtResource("2_2dygq")
+hframes = 6
+vframes = 2
+frame = 7
 
 [node name="Plant_Area" type="CollisionShape2D" parent="TestMap/Tiles/Tile14"]
 position = Vector2(76, 75)
@@ -91,9 +109,10 @@ position = Vector2(600, 0)
 
 [node name="Sprite" type="Sprite2D" parent="TestMap/Tiles/Tile15"]
 position = Vector2(76, 74)
-texture = ExtResource("2_ceglb")
-hframes = 3
-frame = 1
+texture = ExtResource("2_2dygq")
+hframes = 6
+vframes = 2
+frame = 2
 
 [node name="Plant_Area" type="CollisionShape2D" parent="TestMap/Tiles/Tile15"]
 position = Vector2(76, 75)
@@ -104,9 +123,10 @@ position = Vector2(750, 0)
 
 [node name="Sprite" type="Sprite2D" parent="TestMap/Tiles/Tile16"]
 position = Vector2(76, 74)
-texture = ExtResource("2_ceglb")
-hframes = 3
-frame = 1
+texture = ExtResource("2_2dygq")
+hframes = 6
+vframes = 2
+frame = 4
 
 [node name="Plant_Area" type="CollisionShape2D" parent="TestMap/Tiles/Tile16"]
 position = Vector2(76, 75)
@@ -117,9 +137,10 @@ position = Vector2(900, 0)
 
 [node name="Sprite" type="Sprite2D" parent="TestMap/Tiles/Tile17"]
 position = Vector2(76, 74)
-texture = ExtResource("2_ceglb")
-hframes = 3
-frame = 1
+texture = ExtResource("2_2dygq")
+hframes = 6
+vframes = 2
+frame = 3
 
 [node name="Plant_Area" type="CollisionShape2D" parent="TestMap/Tiles/Tile17"]
 position = Vector2(76, 75)
@@ -130,9 +151,10 @@ position = Vector2(1050, 0)
 
 [node name="Sprite" type="Sprite2D" parent="TestMap/Tiles/Tile18"]
 position = Vector2(76, 74)
-texture = ExtResource("2_ceglb")
-hframes = 3
-frame = 1
+texture = ExtResource("2_2dygq")
+hframes = 6
+vframes = 2
+frame = 4
 
 [node name="Plant_Area" type="CollisionShape2D" parent="TestMap/Tiles/Tile18"]
 position = Vector2(76, 75)
@@ -143,9 +165,10 @@ position = Vector2(1200, 0)
 
 [node name="Sprite" type="Sprite2D" parent="TestMap/Tiles/Tile19"]
 position = Vector2(76, 74)
-texture = ExtResource("2_ceglb")
-hframes = 3
-frame = 1
+texture = ExtResource("2_2dygq")
+hframes = 6
+vframes = 2
+frame = 3
 
 [node name="Plant_Area" type="CollisionShape2D" parent="TestMap/Tiles/Tile19"]
 position = Vector2(76, 75)
@@ -156,9 +179,10 @@ position = Vector2(0, 150)
 
 [node name="Sprite" type="Sprite2D" parent="TestMap/Tiles/Tile21"]
 position = Vector2(76, 74)
-texture = ExtResource("2_ceglb")
-hframes = 3
-frame = 1
+texture = ExtResource("2_2dygq")
+hframes = 6
+vframes = 2
+frame = 8
 
 [node name="Plant_Area" type="CollisionShape2D" parent="TestMap/Tiles/Tile21"]
 position = Vector2(76, 75)
@@ -169,9 +193,9 @@ position = Vector2(150, 150)
 
 [node name="Sprite" type="Sprite2D" parent="TestMap/Tiles/Tile22"]
 position = Vector2(76, 74)
-texture = ExtResource("2_ceglb")
-hframes = 3
-frame = 1
+texture = ExtResource("2_2dygq")
+hframes = 6
+vframes = 2
 
 [node name="Plant_Area" type="CollisionShape2D" parent="TestMap/Tiles/Tile22"]
 position = Vector2(76, 75)
@@ -182,9 +206,10 @@ position = Vector2(300, 150)
 
 [node name="Sprite" type="Sprite2D" parent="TestMap/Tiles/Tile23"]
 position = Vector2(76, 74)
-texture = ExtResource("2_ceglb")
-hframes = 3
-frame = 1
+texture = ExtResource("2_2dygq")
+hframes = 6
+vframes = 2
+frame = 7
 
 [node name="Plant_Area" type="CollisionShape2D" parent="TestMap/Tiles/Tile23"]
 position = Vector2(76, 75)
@@ -195,8 +220,9 @@ position = Vector2(450, 150)
 
 [node name="Sprite" type="Sprite2D" parent="TestMap/Tiles/Tile24"]
 position = Vector2(76, 74)
-texture = ExtResource("2_ceglb")
-hframes = 3
+texture = ExtResource("2_2dygq")
+hframes = 6
+vframes = 2
 frame = 1
 
 [node name="Plant_Area" type="CollisionShape2D" parent="TestMap/Tiles/Tile24"]
@@ -208,9 +234,10 @@ position = Vector2(600, 150)
 
 [node name="Sprite" type="Sprite2D" parent="TestMap/Tiles/Tile25"]
 position = Vector2(76, 74)
-texture = ExtResource("2_ceglb")
-hframes = 3
-frame = 1
+texture = ExtResource("2_2dygq")
+hframes = 6
+vframes = 2
+frame = 8
 
 [node name="Plant_Area" type="CollisionShape2D" parent="TestMap/Tiles/Tile25"]
 position = Vector2(76, 75)
@@ -221,9 +248,9 @@ position = Vector2(750, 150)
 
 [node name="Sprite" type="Sprite2D" parent="TestMap/Tiles/Tile26"]
 position = Vector2(76, 74)
-texture = ExtResource("2_ceglb")
-hframes = 3
-frame = 1
+texture = ExtResource("2_2dygq")
+hframes = 6
+vframes = 2
 
 [node name="Plant_Area" type="CollisionShape2D" parent="TestMap/Tiles/Tile26"]
 position = Vector2(76, 75)
@@ -234,9 +261,10 @@ position = Vector2(900, 150)
 
 [node name="Sprite" type="Sprite2D" parent="TestMap/Tiles/Tile27"]
 position = Vector2(76, 74)
-texture = ExtResource("2_ceglb")
-hframes = 3
-frame = 1
+texture = ExtResource("2_2dygq")
+hframes = 6
+vframes = 2
+frame = 4
 
 [node name="Plant_Area" type="CollisionShape2D" parent="TestMap/Tiles/Tile27"]
 position = Vector2(76, 75)
@@ -247,9 +275,10 @@ position = Vector2(1050, 150)
 
 [node name="Sprite" type="Sprite2D" parent="TestMap/Tiles/Tile28"]
 position = Vector2(76, 74)
-texture = ExtResource("2_ceglb")
-hframes = 3
-frame = 1
+texture = ExtResource("2_2dygq")
+hframes = 6
+vframes = 2
+frame = 3
 
 [node name="Plant_Area" type="CollisionShape2D" parent="TestMap/Tiles/Tile28"]
 position = Vector2(76, 75)
@@ -260,9 +289,10 @@ position = Vector2(1200, 150)
 
 [node name="Sprite" type="Sprite2D" parent="TestMap/Tiles/Tile29"]
 position = Vector2(76, 74)
-texture = ExtResource("2_ceglb")
-hframes = 3
-frame = 1
+texture = ExtResource("2_2dygq")
+hframes = 6
+vframes = 2
+frame = 4
 
 [node name="Plant_Area" type="CollisionShape2D" parent="TestMap/Tiles/Tile29"]
 position = Vector2(76, 75)
@@ -273,9 +303,10 @@ position = Vector2(0, 300)
 
 [node name="Sprite" type="Sprite2D" parent="TestMap/Tiles/Tile31"]
 position = Vector2(76, 74)
-texture = ExtResource("2_ceglb")
-hframes = 3
-frame = 1
+texture = ExtResource("2_2dygq")
+hframes = 6
+vframes = 2
+frame = 2
 
 [node name="Plant_Area" type="CollisionShape2D" parent="TestMap/Tiles/Tile31"]
 position = Vector2(76, 75)
@@ -286,9 +317,10 @@ position = Vector2(150, 300)
 
 [node name="Sprite" type="Sprite2D" parent="TestMap/Tiles/Tile32"]
 position = Vector2(76, 74)
-texture = ExtResource("2_ceglb")
-hframes = 3
-frame = 1
+texture = ExtResource("2_2dygq")
+hframes = 6
+vframes = 2
+frame = 6
 
 [node name="Plant_Area" type="CollisionShape2D" parent="TestMap/Tiles/Tile32"]
 position = Vector2(76, 75)
@@ -299,9 +331,10 @@ position = Vector2(300, 300)
 
 [node name="Sprite" type="Sprite2D" parent="TestMap/Tiles/Tile33"]
 position = Vector2(76, 74)
-texture = ExtResource("2_ceglb")
-hframes = 3
-frame = 1
+texture = ExtResource("2_2dygq")
+hframes = 6
+vframes = 2
+frame = 2
 
 [node name="Plant_Area" type="CollisionShape2D" parent="TestMap/Tiles/Tile33"]
 position = Vector2(76, 75)
@@ -312,9 +345,10 @@ position = Vector2(450, 300)
 
 [node name="Sprite" type="Sprite2D" parent="TestMap/Tiles/Tile34"]
 position = Vector2(76, 74)
-texture = ExtResource("2_ceglb")
-hframes = 3
-frame = 1
+texture = ExtResource("2_2dygq")
+hframes = 6
+vframes = 2
+frame = 6
 
 [node name="Plant_Area" type="CollisionShape2D" parent="TestMap/Tiles/Tile34"]
 position = Vector2(76, 75)
@@ -325,9 +359,10 @@ position = Vector2(600, 300)
 
 [node name="Sprite" type="Sprite2D" parent="TestMap/Tiles/Tile35"]
 position = Vector2(76, 74)
-texture = ExtResource("2_ceglb")
-hframes = 3
-frame = 1
+texture = ExtResource("2_2dygq")
+hframes = 6
+vframes = 2
+frame = 3
 
 [node name="Plant_Area" type="CollisionShape2D" parent="TestMap/Tiles/Tile35"]
 position = Vector2(76, 75)
@@ -338,9 +373,10 @@ position = Vector2(750, 300)
 
 [node name="Sprite" type="Sprite2D" parent="TestMap/Tiles/Tile36"]
 position = Vector2(76, 74)
-texture = ExtResource("2_ceglb")
-hframes = 3
-frame = 1
+texture = ExtResource("2_2dygq")
+hframes = 6
+vframes = 2
+frame = 4
 
 [node name="Plant_Area" type="CollisionShape2D" parent="TestMap/Tiles/Tile36"]
 position = Vector2(76, 75)
@@ -351,9 +387,10 @@ position = Vector2(900, 300)
 
 [node name="Sprite" type="Sprite2D" parent="TestMap/Tiles/Tile37"]
 position = Vector2(76, 74)
-texture = ExtResource("2_ceglb")
-hframes = 3
-frame = 1
+texture = ExtResource("2_2dygq")
+hframes = 6
+vframes = 2
+frame = 3
 
 [node name="Plant_Area" type="CollisionShape2D" parent="TestMap/Tiles/Tile37"]
 position = Vector2(76, 75)
@@ -364,9 +401,10 @@ position = Vector2(1050, 300)
 
 [node name="Sprite" type="Sprite2D" parent="TestMap/Tiles/Tile38"]
 position = Vector2(76, 74)
-texture = ExtResource("2_ceglb")
-hframes = 3
-frame = 1
+texture = ExtResource("2_2dygq")
+hframes = 6
+vframes = 2
+frame = 4
 
 [node name="Plant_Area" type="CollisionShape2D" parent="TestMap/Tiles/Tile38"]
 position = Vector2(76, 75)
@@ -377,8 +415,9 @@ position = Vector2(1200, 300)
 
 [node name="Sprite" type="Sprite2D" parent="TestMap/Tiles/Tile39"]
 position = Vector2(76, 74)
-texture = ExtResource("2_ceglb")
-hframes = 3
+texture = ExtResource("2_2dygq")
+hframes = 6
+vframes = 2
 frame = 1
 
 [node name="Plant_Area" type="CollisionShape2D" parent="TestMap/Tiles/Tile39"]
@@ -390,9 +429,10 @@ position = Vector2(0, 450)
 
 [node name="Sprite" type="Sprite2D" parent="TestMap/Tiles/Tile41"]
 position = Vector2(76, 74)
-texture = ExtResource("2_ceglb")
-hframes = 3
-frame = 1
+texture = ExtResource("2_2dygq")
+hframes = 6
+vframes = 2
+frame = 7
 
 [node name="Plant_Area" type="CollisionShape2D" parent="TestMap/Tiles/Tile41"]
 position = Vector2(76, 75)
@@ -403,8 +443,9 @@ position = Vector2(150, 450)
 
 [node name="Sprite" type="Sprite2D" parent="TestMap/Tiles/Tile42"]
 position = Vector2(76, 74)
-texture = ExtResource("2_ceglb")
-hframes = 3
+texture = ExtResource("2_2dygq")
+hframes = 6
+vframes = 2
 frame = 1
 
 [node name="Plant_Area" type="CollisionShape2D" parent="TestMap/Tiles/Tile42"]
@@ -416,9 +457,10 @@ position = Vector2(300, 450)
 
 [node name="Sprite" type="Sprite2D" parent="TestMap/Tiles/Tile43"]
 position = Vector2(76, 74)
-texture = ExtResource("2_ceglb")
-hframes = 3
-frame = 1
+texture = ExtResource("2_2dygq")
+hframes = 6
+vframes = 2
+frame = 8
 
 [node name="Plant_Area" type="CollisionShape2D" parent="TestMap/Tiles/Tile43"]
 position = Vector2(76, 75)
@@ -429,9 +471,10 @@ position = Vector2(450, 450)
 
 [node name="Sprite" type="Sprite2D" parent="TestMap/Tiles/Tile44"]
 position = Vector2(76, 74)
-texture = ExtResource("2_ceglb")
-hframes = 3
-frame = 1
+texture = ExtResource("2_2dygq")
+hframes = 6
+vframes = 2
+frame = 3
 
 [node name="Plant_Area" type="CollisionShape2D" parent="TestMap/Tiles/Tile44"]
 position = Vector2(76, 75)
@@ -442,9 +485,10 @@ position = Vector2(600, 450)
 
 [node name="Sprite" type="Sprite2D" parent="TestMap/Tiles/Tile45"]
 position = Vector2(76, 74)
-texture = ExtResource("2_ceglb")
-hframes = 3
-frame = 1
+texture = ExtResource("2_2dygq")
+hframes = 6
+vframes = 2
+frame = 4
 
 [node name="Plant_Area" type="CollisionShape2D" parent="TestMap/Tiles/Tile45"]
 position = Vector2(76, 75)
@@ -455,9 +499,10 @@ position = Vector2(750, 450)
 
 [node name="Sprite" type="Sprite2D" parent="TestMap/Tiles/Tile46"]
 position = Vector2(76, 74)
-texture = ExtResource("2_ceglb")
-hframes = 3
-frame = 1
+texture = ExtResource("2_2dygq")
+hframes = 6
+vframes = 2
+frame = 3
 
 [node name="Plant_Area" type="CollisionShape2D" parent="TestMap/Tiles/Tile46"]
 position = Vector2(76, 75)
@@ -468,9 +513,10 @@ position = Vector2(900, 450)
 
 [node name="Sprite" type="Sprite2D" parent="TestMap/Tiles/Tile47"]
 position = Vector2(76, 74)
-texture = ExtResource("2_ceglb")
-hframes = 3
-frame = 1
+texture = ExtResource("2_2dygq")
+hframes = 6
+vframes = 2
+frame = 6
 
 [node name="Plant_Area" type="CollisionShape2D" parent="TestMap/Tiles/Tile47"]
 position = Vector2(76, 75)
@@ -481,9 +527,10 @@ position = Vector2(1050, 450)
 
 [node name="Sprite" type="Sprite2D" parent="TestMap/Tiles/Tile48"]
 position = Vector2(76, 74)
-texture = ExtResource("2_ceglb")
-hframes = 3
-frame = 1
+texture = ExtResource("2_2dygq")
+hframes = 6
+vframes = 2
+frame = 3
 
 [node name="Plant_Area" type="CollisionShape2D" parent="TestMap/Tiles/Tile48"]
 position = Vector2(76, 75)
@@ -494,9 +541,10 @@ position = Vector2(1200, 450)
 
 [node name="Sprite" type="Sprite2D" parent="TestMap/Tiles/Tile49"]
 position = Vector2(76, 74)
-texture = ExtResource("2_ceglb")
-hframes = 3
-frame = 1
+texture = ExtResource("2_2dygq")
+hframes = 6
+vframes = 2
+frame = 4
 
 [node name="Plant_Area" type="CollisionShape2D" parent="TestMap/Tiles/Tile49"]
 position = Vector2(76, 75)
@@ -507,9 +555,9 @@ position = Vector2(0, 600)
 
 [node name="Sprite" type="Sprite2D" parent="TestMap/Tiles/Tile51"]
 position = Vector2(76, 74)
-texture = ExtResource("2_ceglb")
-hframes = 3
-frame = 1
+texture = ExtResource("2_2dygq")
+hframes = 6
+vframes = 2
 
 [node name="Plant_Area" type="CollisionShape2D" parent="TestMap/Tiles/Tile51"]
 position = Vector2(76, 75)
@@ -520,9 +568,10 @@ position = Vector2(150, 600)
 
 [node name="Sprite" type="Sprite2D" parent="TestMap/Tiles/Tile52"]
 position = Vector2(76, 74)
-texture = ExtResource("2_ceglb")
-hframes = 3
-frame = 1
+texture = ExtResource("2_2dygq")
+hframes = 6
+vframes = 2
+frame = 7
 
 [node name="Plant_Area" type="CollisionShape2D" parent="TestMap/Tiles/Tile52"]
 position = Vector2(76, 75)
@@ -533,9 +582,9 @@ position = Vector2(300, 600)
 
 [node name="Sprite" type="Sprite2D" parent="TestMap/Tiles/Tile53"]
 position = Vector2(76, 74)
-texture = ExtResource("2_ceglb")
-hframes = 3
-frame = 1
+texture = ExtResource("2_2dygq")
+hframes = 6
+vframes = 2
 
 [node name="Plant_Area" type="CollisionShape2D" parent="TestMap/Tiles/Tile53"]
 position = Vector2(76, 75)
@@ -546,9 +595,10 @@ position = Vector2(450, 600)
 
 [node name="Sprite" type="Sprite2D" parent="TestMap/Tiles/Tile54"]
 position = Vector2(76, 74)
-texture = ExtResource("2_ceglb")
-hframes = 3
-frame = 1
+texture = ExtResource("2_2dygq")
+hframes = 6
+vframes = 2
+frame = 7
 
 [node name="Plant_Area" type="CollisionShape2D" parent="TestMap/Tiles/Tile54"]
 position = Vector2(76, 75)
@@ -559,9 +609,10 @@ position = Vector2(600, 600)
 
 [node name="Sprite" type="Sprite2D" parent="TestMap/Tiles/Tile55"]
 position = Vector2(76, 74)
-texture = ExtResource("2_ceglb")
-hframes = 3
-frame = 1
+texture = ExtResource("2_2dygq")
+hframes = 6
+vframes = 2
+frame = 2
 
 [node name="Plant_Area" type="CollisionShape2D" parent="TestMap/Tiles/Tile55"]
 position = Vector2(76, 75)
@@ -572,9 +623,10 @@ position = Vector2(750, 600)
 
 [node name="Sprite" type="Sprite2D" parent="TestMap/Tiles/Tile56"]
 position = Vector2(76, 74)
-texture = ExtResource("2_ceglb")
-hframes = 3
-frame = 1
+texture = ExtResource("2_2dygq")
+hframes = 6
+vframes = 2
+frame = 4
 
 [node name="Plant_Area" type="CollisionShape2D" parent="TestMap/Tiles/Tile56"]
 position = Vector2(76, 75)
@@ -585,9 +637,10 @@ position = Vector2(900, 600)
 
 [node name="Sprite" type="Sprite2D" parent="TestMap/Tiles/Tile57"]
 position = Vector2(76, 74)
-texture = ExtResource("2_ceglb")
-hframes = 3
-frame = 1
+texture = ExtResource("2_2dygq")
+hframes = 6
+vframes = 2
+frame = 3
 
 [node name="Plant_Area" type="CollisionShape2D" parent="TestMap/Tiles/Tile57"]
 position = Vector2(76, 75)
@@ -598,9 +651,10 @@ position = Vector2(1050, 600)
 
 [node name="Sprite" type="Sprite2D" parent="TestMap/Tiles/Tile58"]
 position = Vector2(76, 74)
-texture = ExtResource("2_ceglb")
-hframes = 3
-frame = 1
+texture = ExtResource("2_2dygq")
+hframes = 6
+vframes = 2
+frame = 4
 
 [node name="Plant_Area" type="CollisionShape2D" parent="TestMap/Tiles/Tile58"]
 position = Vector2(76, 75)
@@ -611,9 +665,10 @@ position = Vector2(1200, 600)
 
 [node name="Sprite" type="Sprite2D" parent="TestMap/Tiles/Tile59"]
 position = Vector2(76, 74)
-texture = ExtResource("2_ceglb")
-hframes = 3
-frame = 1
+texture = ExtResource("2_2dygq")
+hframes = 6
+vframes = 2
+frame = 3
 
 [node name="Plant_Area" type="CollisionShape2D" parent="TestMap/Tiles/Tile59"]
 position = Vector2(76, 75)
@@ -639,11 +694,6 @@ layer_0/tile_data = PackedInt32Array(65536, 131072, 0, 262152, 131072, 0, 196615
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(960, 540)
 
-[node name="Zombie" parent="." instance=ExtResource("2_bm2e6")]
-z_index = 1
-position = Vector2(1478, 528)
-scale = Vector2(0.6, 0.6)
-
 [node name="UI" type="CanvasLayer" parent="."]
 script = ExtResource("5_shsv4")
 
@@ -659,22 +709,184 @@ mouse_filter = 2
 [node name="BuildBar" type="VBoxContainer" parent="UI/HUD"]
 custom_minimum_size = Vector2(200, 800)
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = 1.0
+offset_top = 137.0
+offset_right = 202.0
+offset_bottom = 937.0
 
 [node name="peashooter" type="TextureButton" parent="UI/HUD/BuildBar" groups=["build_buttons"]]
 custom_minimum_size = Vector2(100, 80)
 layout_mode = 2
-texture_normal = ExtResource("6_fksj3")
+texture_normal = ExtResource("6_hvr8o")
 stretch_mode = 0
 
+[node name="sun_cost" type="Label" parent="UI/HUD/BuildBar/peashooter"]
+z_index = 2
+layout_mode = 0
+offset_left = 154.0
+offset_top = 84.0
+offset_right = 194.0
+offset_bottom = 116.0
+text = "100"
+label_settings = SubResource("LabelSettings_sp3tp")
+
 [node name="somethingIDK" type="TextureRect" parent="UI/HUD/BuildBar/peashooter"]
-visible = false
+z_index = 1
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
+texture = ExtResource("7_s04gi")
+
+[node name="Pea_icon" type="Polygon2D" parent="UI/HUD/BuildBar/peashooter"]
+z_index = 1
+position = Vector2(26, 16)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("8_fyqwv")
+polygon = PackedVector2Array(-11.7399, 7.98319, -12.1601, 113.445, 114.731, 118.487, 134.479, 4.20168)
+uv = PackedVector2Array(-11.7399, 7.98319, -12.1601, 113.445, 114.731, 118.487, 134.479, 4.20168)
+
+[node name="Mouth" type="Polygon2D" parent="UI/HUD/BuildBar/peashooter/Pea_icon"]
+position = Vector2(-18.5714, -35.7143)
+texture = ExtResource("8_fyqwv")
+polygon = PackedVector2Array(124.395, 76.8907, 121.033, 139.076, 168.932, 163.445, 176.916, 75.6302)
+uv = PackedVector2Array(124.395, 76.8907, 121.033, 139.076, 168.932, 163.445, 176.916, 75.6302)
+
+[node name="Mouth2" type="Polygon2D" parent="UI/HUD/BuildBar/peashooter/Pea_icon"]
+position = Vector2(40, -102.857)
+texture = ExtResource("8_fyqwv")
+polygon = PackedVector2Array(73.134, 148.739, 69.7727, 210.924, 106.747, 211.345, 112.63, 151.26)
+
+[node name="eye_left" type="Polygon2D" parent="UI/HUD/BuildBar/peashooter/Pea_icon"]
+position = Vector2(54.2857, -120)
+texture = ExtResource("8_fyqwv")
+polygon = PackedVector2Array(3.8063, 160.504, 3.8063, 181.513, 27.7559, 187.395, 25.6551, 157.983)
+uv = PackedVector2Array(3.8063, 160.504, 3.8063, 181.513, 27.7559, 187.395, 25.6551, 157.983)
+
+[node name="eye_right" type="Polygon2D" parent="UI/HUD/BuildBar/peashooter/Pea_icon"]
+position = Vector2(82.8571, -112.857)
+scale = Vector2(0.9, 0.9)
+texture = ExtResource("8_fyqwv")
+polygon = PackedVector2Array(3.8063, 160.504, 3.8063, 181.513, 27.7559, 187.395, 25.6551, 157.983)
+uv = PackedVector2Array(3.8063, 160.504, 3.8063, 181.513, 27.7559, 187.395, 25.6551, 157.983)
+
+[node name="stem" type="Polygon2D" parent="UI/HUD/BuildBar/peashooter/Pea_icon"]
+z_index = -1
+position = Vector2(-105.714, 67.1429)
+rotation = 0.150207
+texture = ExtResource("8_fyqwv")
+polygon = PackedVector2Array(127.336, 4.20168, 126.916, 50, 168.512, 50, 168.512, 3.36134)
+uv = PackedVector2Array(127.336, 4.20168, 126.916, 50, 168.512, 50, 168.512, 3.36134)
+
+[node name="stem2" type="Polygon2D" parent="UI/HUD/BuildBar/peashooter/Pea_icon"]
+z_index = -1
+position = Vector2(-58.5714, -134.286)
+rotation = 0.150207
+texture = ExtResource("8_fyqwv")
+polygon = PackedVector2Array(79.0164, 121.429, 78.5962, 151.681, 120.193, 151.681, 119.773, 121.429)
+uv = PackedVector2Array(79.0164, 121.429, 78.5962, 151.681, 120.193, 151.681, 119.773, 121.429)
+
+[node name="sunflower" type="TextureButton" parent="UI/HUD/BuildBar" groups=["build_buttons"]]
+custom_minimum_size = Vector2(100, 80)
+layout_mode = 2
+texture_normal = ExtResource("6_hvr8o")
+stretch_mode = 0
+
+[node name="sun_cost" type="Label" parent="UI/HUD/BuildBar/sunflower"]
+z_index = 2
+layout_mode = 0
+offset_left = 154.0
+offset_top = 84.0
+offset_right = 194.0
+offset_bottom = 116.0
+text = "150"
+label_settings = SubResource("LabelSettings_sp3tp")
+
+[node name="somethingIDK" type="TextureRect" parent="UI/HUD/BuildBar/sunflower"]
+z_index = 1
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("7_s04gi")
+
+[node name="Sun_icon" type="Polygon2D" parent="UI/HUD/BuildBar/sunflower"]
+position = Vector2(17, -49)
+rotation = -0.0655203
+scale = Vector2(0.52, 0.52)
+texture = ExtResource("10_1dey5")
+polygon = PackedVector2Array(171.874, 103.782, -4.59705, 160.924, -4.59705, 323.95, 204.226, 331.092, 245.823, 211.345)
+uv = PackedVector2Array(171.874, 103.782, -4.59705, 160.924, -4.59705, 323.95, 204.226, 331.092, 245.823, 211.345)
+
+[node name="face" type="Polygon2D" parent="UI/HUD/BuildBar/sunflower/Sun_icon"]
+position = Vector2(39.0644, 168.303)
+texture = ExtResource("10_1dey5")
+polygon = PackedVector2Array(-12.3092, -6.82097, 160.53, -7.43826, 159.296, 116.019, -4.28455, 141.327)
+uv = PackedVector2Array(-12.3092, -6.82097, 160.53, -7.43826, 159.296, 116.019, -4.28455, 141.327)
+
+[node name="eye" type="Polygon2D" parent="UI/HUD/BuildBar/sunflower/Sun_icon"]
+position = Vector2(-160.376, 35.7301)
+texture = ExtResource("10_1dey5")
+polygon = PackedVector2Array(237.073, 165.401, 237.691, 207.377, 266.703, 206.759, 267.32, 166.019)
+uv = PackedVector2Array(237.073, 165.401, 237.691, 207.377, 266.703, 206.759, 267.32, 166.019)
+
+[node name="eye2" type="Polygon2D" parent="UI/HUD/BuildBar/sunflower/Sun_icon"]
+position = Vector2(-104.474, 35.5437)
+texture = ExtResource("10_1dey5")
+polygon = PackedVector2Array(237.073, 165.401, 237.691, 207.377, 266.703, 206.759, 267.32, 166.019)
+uv = PackedVector2Array(237.073, 165.401, 237.691, 207.377, 266.703, 206.759, 267.32, 166.019)
+
+[node name="eye3" type="Polygon2D" parent="UI/HUD/BuildBar/sunflower/Sun_icon"]
+position = Vector2(-98.5869, -83.5572)
+texture = ExtResource("10_1dey5")
+polygon = PackedVector2Array(164.851, 329.599, 164.851, 361.698, 271.641, 362.315, 271.641, 332.068)
+uv = PackedVector2Array(164.851, 329.599, 164.851, 361.698, 271.641, 362.315, 271.641, 332.068)
+
+[node name="SunUI" type="ColorRect" parent="UI/HUD"]
+custom_minimum_size = Vector2(220, 100)
+layout_mode = 0
+offset_left = -3.0
+offset_right = 197.0
+offset_bottom = 100.0
+color = Color(0.0980392, 0.0980392, 0.0980392, 0.737255)
+
+[node name="sun_icon" type="Sprite2D" parent="UI/HUD/SunUI"]
+position = Vector2(50, 50)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("11_6c2ol")
+
+[node name="sun" type="Label" parent="UI/HUD/SunUI"]
+z_index = 2
+layout_mode = 0
+offset_left = 113.0
+offset_top = 20.0
+offset_right = 196.0
+offset_bottom = 91.0
+text = "100"
+label_settings = SubResource("LabelSettings_818re")
 
 [node name="peashooter" parent="." instance=ExtResource("5_t0w44")]
 visible = false
 z_index = 1
 position = Vector2(1226, 951)
+
+[node name="Zombies" type="Node" parent="."]
+
+[node name="Column0" type="Node2D" parent="Zombies"]
+position = Vector2(1730, 210)
+
+[node name="Zombie" parent="Zombies/Column0" instance=ExtResource("2_bm2e6")]
+z_index = 1
+scale = Vector2(0.65, 0.65)
+
+[node name="Column1" type="Node2D" parent="Zombies"]
+position = Vector2(1730, 360)
+
+[node name="Column2" type="Node2D" parent="Zombies"]
+position = Vector2(1730, 510)
+
+[node name="Column3" type="Node2D" parent="Zombies"]
+position = Vector2(1730, 660)
+
+[node name="Column4" type="Node2D" parent="Zombies"]
+position = Vector2(1730, 810)
+
+[node name="Suns" type="Node" parent="."]

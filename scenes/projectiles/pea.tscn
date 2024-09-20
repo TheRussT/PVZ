@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://dkgkko7iuvfxd"]
+
+[ext_resource type="Texture2D" uid="uid://c5mktatbgcc0l" path="res://assets/plants/peashooter.png" id="1_ph36y"]
+[ext_resource type="Script" path="res://scenes/projectiles/pea.gd" id="2_p4pqx"]
+
+[node name="Pea" type="Polygon2D"]
+z_index = 6
+scale = Vector2(0.75, 0.75)
+offset = Vector2(-146, -190)
+texture = ExtResource("1_ph36y")
+polygon = PackedVector2Array(119.01, 158.594, 119.01, 158.594, 169.792, 158.333, 169.531, 218.75, 118.229, 212.24)
+uv = PackedVector2Array(119.01, 158.594, 119.01, 158.594, 169.792, 158.333, 169.531, 218.75, 118.229, 212.24)
+script = ExtResource("2_p4pqx")
