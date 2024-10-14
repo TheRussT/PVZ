@@ -24,7 +24,7 @@ func _process(delta):
 		if is_falling:
 			position.x += velocity_x * delta
 			position.y += velocity_y * delta
-			velocity_y += 50 * delta
+			velocity_y += 120 * delta
 			if velocity_y > 100:
 				velocity_y = 100
 			if position.y >= stop_point:

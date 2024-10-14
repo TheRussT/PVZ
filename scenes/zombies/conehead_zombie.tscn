@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://bfwslsim452jn"]
+
+[ext_resource type="PackedScene" uid="uid://b5cnui56j2n62" path="res://scenes/zombies/zombie.tscn" id="1_57cea"]
+[ext_resource type="Script" path="res://scripts/zombies/conehead_zombie.gd" id="2_a61gq"]
+
+[node name="Zombie" instance=ExtResource("1_57cea")]
+script = ExtResource("2_a61gq")
+
+[node name="Cone" parent="Polygons/Hip/Torso/Head/Headwear" index="0"]
+visible = true

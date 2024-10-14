@@ -1,11 +1,10 @@
-[gd_scene load_steps=19 format=3 uid="uid://bw0tb6yjh4l5y"]
+[gd_scene load_steps=18 format=3 uid="uid://bw0tb6yjh4l5y"]
 
-[ext_resource type="Script" path="res://scenes/levels/level.gd" id="1_eewh1"]
+[ext_resource type="Script" path="res://scripts/levels/level.gd" id="1_kt5kx"]
 [ext_resource type="Texture2D" uid="uid://cseq2rxg575uf" path="res://assets/map/tilesets/Tiles_V2.png" id="2_2dygq"]
 [ext_resource type="Texture2D" uid="uid://bvk2531m45iil" path="res://assets/map/background/Background_2.0.png" id="2_4sf3w"]
-[ext_resource type="PackedScene" uid="uid://cfot0fffu6j2t" path="res://scenes/zombies/zombie.tscn" id="2_bm2e6"]
 [ext_resource type="Texture2D" uid="uid://dgoraynflihyo" path="res://assets/map/tilesets/Tiles_V1.png" id="2_ceglb"]
-[ext_resource type="Script" path="res://scenes/levels/UI.gd" id="5_shsv4"]
+[ext_resource type="Script" path="res://scripts/levels/UI.gd" id="5_ageun"]
 [ext_resource type="PackedScene" uid="uid://di0iy4h1qhndg" path="res://scenes/plants/peashooter.tscn" id="5_t0w44"]
 [ext_resource type="Texture2D" uid="uid://bck0f32wkr3et" path="res://assets/ui/Seed_Packet_Background.png" id="6_hvr8o"]
 [ext_resource type="Texture2D" uid="uid://6bchapvda3xj" path="res://assets/ui/Seed_packet.png" id="7_s04gi"]
@@ -38,17 +37,17 @@ font = ExtResource("9_c4nsk")
 font_size = 54
 
 [node name="Level" type="Node2D"]
-script = ExtResource("1_eewh1")
+script = ExtResource("1_kt5kx")
 
 [node name="TestMap" type="Node" parent="."]
 
 [node name="Background" type="Sprite2D" parent="TestMap"]
 z_index = -1
-position = Vector2(1139, 455)
+position = Vector2(1239, 455)
 texture = ExtResource("2_4sf3w")
 
 [node name="Tiles" type="Node2D" parent="TestMap"]
-position = Vector2(286, 190)
+position = Vector2(386, 190)
 
 [node name="Tile11" type="StaticBody2D" parent="TestMap/Tiles"]
 
@@ -695,7 +694,7 @@ layer_0/tile_data = PackedInt32Array(65536, 131072, 0, 262152, 131072, 0, 196615
 position = Vector2(960, 540)
 
 [node name="UI" type="CanvasLayer" parent="."]
-script = ExtResource("5_shsv4")
+script = ExtResource("5_ageun")
 
 [node name="HUD" type="Control" parent="UI"]
 custom_minimum_size = Vector2(1920, 1080)
@@ -798,7 +797,7 @@ offset_left = 154.0
 offset_top = 84.0
 offset_right = 194.0
 offset_bottom = 116.0
-text = "150"
+text = "75"
 label_settings = SubResource("LabelSettings_sp3tp")
 
 [node name="somethingIDK" type="TextureRect" parent="UI/HUD/BuildBar/sunflower"]
@@ -871,22 +870,18 @@ position = Vector2(1226, 951)
 [node name="Zombies" type="Node" parent="."]
 
 [node name="Column0" type="Node2D" parent="Zombies"]
-position = Vector2(1730, 210)
-
-[node name="Zombie" parent="Zombies/Column0" instance=ExtResource("2_bm2e6")]
-z_index = 1
-scale = Vector2(0.65, 0.65)
+position = Vector2(2000, 210)
 
 [node name="Column1" type="Node2D" parent="Zombies"]
-position = Vector2(1730, 360)
+position = Vector2(2000, 360)
 
 [node name="Column2" type="Node2D" parent="Zombies"]
-position = Vector2(1730, 510)
+position = Vector2(2000, 510)
 
 [node name="Column3" type="Node2D" parent="Zombies"]
-position = Vector2(1730, 660)
+position = Vector2(2000, 660)
 
 [node name="Column4" type="Node2D" parent="Zombies"]
-position = Vector2(1730, 810)
+position = Vector2(2000, 810)
 
 [node name="Suns" type="Node" parent="."]

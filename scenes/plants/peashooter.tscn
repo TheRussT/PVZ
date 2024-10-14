@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://di0iy4h1qhndg"]
 
+[ext_resource type="Script" path="res://scripts/plants/peashooter.gd" id="1_evcuv"]
 [ext_resource type="Texture2D" uid="uid://c5mktatbgcc0l" path="res://assets/plants/peashooter.png" id="1_npim7"]
-[ext_resource type="Script" path="res://scenes/plants/peashooter.gd" id="1_qgc0o"]
 
 [sub_resource type="Animation" id="Animation_jo2tn"]
 resource_name = "Idle"
@@ -866,7 +866,7 @@ _data = {
 [node name="peashooter" type="Node2D"]
 z_index = 2
 scale = Vector2(0.75, 0.75)
-script = ExtResource("1_qgc0o")
+script = ExtResource("1_evcuv")
 
 [node name="Stem" type="Polygon2D" parent="."]
 rotation = -0.089506

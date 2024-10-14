@@ -62,6 +62,7 @@ func start_action():
 func damage(value):
 	health -= value
 	if health <= 0:
+		get_node("/root/Level").map_layout[row_num*9+column_num] = 0
 		queue_free()
 
 func initialize():
