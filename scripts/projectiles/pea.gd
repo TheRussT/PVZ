@@ -15,8 +15,8 @@ func _process(delta):
 		print("despawned")
 		queue_free()
 	for z in zombies.get_children():
-		if abs((1730 + z.position.x) - position.x) < 50:
+		if abs((2000 + z.position.x) - position.x) < 50:
 			z.damage(damage)
 			queue_free()
-			print("hit! ", 1730 + z.position.x,  " and ", position.x)
+			print("hit! ", 2000 + z.position.x,  " and ", position.x)
 	position.x += speed * delta

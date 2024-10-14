@@ -28,7 +28,7 @@ func _ready():
 	move_child(get_node("PlantPreview1"), 0)
 
 func set_plant_preview(tower_type, mouse_position, idx):
-	print(idx)
+	#print(idx)
 	curr_control = get_node("PlantPreview" + str(idx))
 	curr_plant = curr_control.get_child(0)
 	curr_plant.visible = true

@@ -30,7 +30,7 @@ func do_action():
 
 func initialize():
 	zombies = get_node("/root/Level/Zombies/Column" + str(row_num))#node
-	cooldown_timer = 2.75
+	cooldown_timer = 2.25
 	health = 400
 	action_timer = 0.8
 	action = action_timer
@@ -38,6 +38,6 @@ func initialize():
 func can_act():
 	if zombies.get_child_count() > 0:
 		for z in zombies.get_children():
-			if z.position.x + 1730 > position.x && z.is_active:
+			if z.position.x + 2000 > position.x && z.is_active:
 				return true
 	return false
